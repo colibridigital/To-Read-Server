@@ -1,11 +1,13 @@
 apply plugin: "java"
 apply plugin: "maven"
+apply plugin: "eclipse"
 
 group = "myorg"
 version = 1.0
 
 repositories {
     mavenCentral()
+    maven { url 'http://maven.restlet.org' }
 }
 
 sourceSets.all { set ->
@@ -26,9 +28,10 @@ sourceSets {
 
 dependencies {
     apiCompile 'commons-codec:commons-codec:1.5'
+    apiCompile group: 'org.restlet.jse', name: 'org.restlet', version: '2.1.4'
 
     implCompile sourceSets.api.output
-    implCompile 'commons-lang:commons-lang:2.6'
+    implCompile 'commons-lang:commons-lang:2.6'    
 
     testCompile 'junit:junit:4.9'
     testCompile sourceSets.api.output
