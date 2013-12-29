@@ -1,6 +1,13 @@
 package com.colibri.toread;
 
+import com.colibri.toread.entities.Author;
+import com.colibri.toread.entities.Book;
+import com.colibri.toread.persistence.BookDAO;
+import com.colibri.toread.persistence.MongoResource;
+import com.colibri.toread.persistence.MorphiaResource;
 import com.colibri.toread.web.*;
+import com.mongodb.MongoClient;
+import com.mongodb.WriteConcern;
 
 import org.restlet.Component;
 import org.restlet.Server;
@@ -26,5 +33,17 @@ public class Bootstrap {
 			
 			//Start the component.
 			component.start();
+			
+			BookDAO dao = new BookDAO(MorphiaResource.INSTANCE.getMorphia(), MongoResource.INSTANCE.getMongoClient());
+			Book book = new Book();
+			Author author = new Author();
+			author.setFirstName("James");
+			author.setLastName("Cross");
+			book.addAuthor(author);
+			book.setTitle("There and back again");
+			book.setPublisher("Tolkein books");
+			
+			dao.save(book, WriteConcern.ACKNOWLEDGED);
+			System.out.println(("done"));
 		}
 }

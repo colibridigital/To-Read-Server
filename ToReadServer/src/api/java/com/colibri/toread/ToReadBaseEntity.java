@@ -1,13 +1,17 @@
 package com.colibri.toread;
 
-public class ToReadBaseEntity {
-	private double tr_id;
+import org.bson.types.ObjectId;
 
-	public double getTr_id() {
-		return tr_id;
+import com.google.code.morphia.annotations.Id;
+
+public abstract class ToReadBaseEntity {
+	@Id private ObjectId id;
+	
+	public ObjectId getObjectId(){
+		return id;
 	}
-
-	public void setTr_id(double tr_id) {
-		this.tr_id = tr_id;
+	
+	public void setObjectId(ObjectId newId){
+		this.id = newId;
 	}
 }
