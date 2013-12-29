@@ -30,6 +30,7 @@ dependencies {
     apiCompile 'commons-codec:commons-codec:1.5'
     apiCompile group: 'org.restlet.jse', name: 'org.restlet', version: '2.1.4'
     apiCompile 'org.mongodb:mongo-java-driver:2.11.3'
+    apiCompile 'com.google.code.morphia:morphia:0.102'
 
     implCompile sourceSets.api.output
     implCompile 'commons-lang:commons-lang:2.6'    
