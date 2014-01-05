@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import com.colibri.toread.ToReadBaseEntity;
+import com.google.code.morphia.annotations.Indexed;
 
 public class WrittenEntity extends ToReadBaseEntity {
-	private String title;
+	@Indexed private String title;
 	private ArrayList<Author> authors = new ArrayList<Author>();
 	private int edition;
 	private String publisher;

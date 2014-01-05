@@ -6,9 +6,11 @@ import com.colibri.toread.persistence.BookDAO;
 import com.colibri.toread.persistence.MongoResource;
 import com.colibri.toread.persistence.MorphiaResource;
 import com.colibri.toread.web.*;
+import com.google.code.morphia.query.Query;
 import com.mongodb.MongoClient;
 import com.mongodb.WriteConcern;
 
+import org.bson.types.ObjectId;
 import org.restlet.Component;
 import org.restlet.Server;
 import org.restlet.data.Parameter;
@@ -24,9 +26,16 @@ public class Bootstrap {
 			//Allow file handling
 			component.getClients().add(Protocol.FILE);
 			
-			//Create a new HTTPS server listening on port 2620.
+			//Create a new HTTPS server listening on port 2709.
 			Server server = component.getServers().add(Protocol.HTTP, 2709);
 			Series<Parameter> params = server.getContext().getParameters(); 
+			
+			//Add the SSL certficiate
+//			params.add("sslContextFactory", "org.restlet.ext.ssl.PkixSslContextFactory");
+//			params.add("keystorePath", "server.jks");
+//			params.add("keystorePassword", "password");
+//			params.add("keyPassword", "password");
+//			params.add("keystoreType", "JKS");
 
 			component.getDefaultHost().attach("/web", new WebApplication());
 			component.getDefaultHost().attach("/api", new ToReadApplication());
@@ -34,7 +43,7 @@ public class Bootstrap {
 			//Start the component.
 			component.start();
 			
-			BookDAO dao = new BookDAO(MorphiaResource.INSTANCE.getMorphia(), MongoResource.INSTANCE.getMongoClient());
+	/*		BookDAO dao = new BookDAO(MorphiaResource.INSTANCE.getMorphia(), MongoResource.INSTANCE.getMongoClient());
 			Book book = new Book();
 			Author author = new Author();
 			author.setFirstName("James");
@@ -44,6 +53,6 @@ public class Bootstrap {
 			book.setPublisher("Tolkein books");
 			
 			dao.save(book, WriteConcern.ACKNOWLEDGED);
-			System.out.println(("done"));
+			System.out.println(("done"));*/
 		}
 }

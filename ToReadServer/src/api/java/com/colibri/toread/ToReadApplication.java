@@ -5,6 +5,7 @@ import org.restlet.Restlet;
 import org.restlet.routing.Router;
 
 import com.colibri.toread.api.InitDeviceResource;
+import com.colibri.toread.api.LoginResource;
 
 public class ToReadApplication extends Application {
 
@@ -13,12 +14,10 @@ public class ToReadApplication extends Application {
 	 */
 	@Override
 	public synchronized Restlet createInboundRoot() {
-		// Create a router Restlet that routes each call to a new instance of
-		// HelloWorldResource.
 		Router router = new Router(getContext());
 
-		// Defines only one route
 		router.attach("/initdevice", InitDeviceResource.class);
+		router.attach("/login", LoginResource.class);
 		
 		return router;
 	}

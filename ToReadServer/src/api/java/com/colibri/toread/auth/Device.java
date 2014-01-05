@@ -9,7 +9,11 @@ public class Device extends ToReadBaseEntity {
 	private String platform;
 	private String os_version;
 	private String cellular_network;
+	private Token auth_token;
 	
+	public Device(){
+		this.auth_token.generateToken();
+	}
 	public String getDevice_os_id() {
 		return device_os_id;
 	}
@@ -45,5 +49,11 @@ public class Device extends ToReadBaseEntity {
 	}
 	public void setCellular_network(String cellular_network) {
 		this.cellular_network = cellular_network;
+	}	
+	public boolean validateToken(String token){
+		if(auth_token == null)
+			return false;
+		
+		return this.auth_token.validateToken(token);
 	}
 }

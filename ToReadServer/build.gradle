@@ -29,6 +29,8 @@ sourceSets {
 dependencies {
     apiCompile 'commons-codec:commons-codec:1.5'
     apiCompile group: 'org.restlet.jse', name: 'org.restlet', version: '2.1.4'
+    apiCompile group: 'org.restlet.jse', name: 'org.restlet.ext.json', version: '2.1.4'
+    apiCompile group: 'org.restlet.jse', name: 'org.restlet.ext.ssl', version: '2.1.4'
     apiCompile 'org.mongodb:mongo-java-driver:2.11.3'
     apiCompile 'com.google.code.morphia:morphia:0.102'
 
