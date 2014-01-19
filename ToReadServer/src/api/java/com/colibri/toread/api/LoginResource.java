@@ -37,8 +37,7 @@ public class LoginResource extends ServerResource {
 				);
 		
 		UserDAO dao = new UserDAO(MorphiaResource.INSTANCE.getMorphia(), MongoResource.INSTANCE.getMongoClient());
-		ObjectId id = new ObjectId(username);
-		User thisUser = dao.get(id);
+		User thisUser = dao.findByUsername(username);
 		
 		//User doesnt exist
 		if(thisUser == null)
@@ -66,17 +65,28 @@ public class LoginResource extends ServerResource {
 		thisDevice.setOs_version(form.getFirstValue("os_version"));
 		thisDevice.setPlatform(form.getFirstValue("platform"));
 		
+		//Add the device to the user
+		thisUser.addDevice(thisDevice);
+		
 		//Update the database
 		dao.save(thisUser);
 		
-		return entity;
+		JSONObject deviceJSON = thisDevice.toJson();
+		try {
+			deviceJSON.append("login_success", true);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
+		//Return a JSONified version of the device containing the device id and auth code
+		return new JsonRepresentation(deviceJSON);
 	}
 	
 	private JSONObject getErrorRepresentation(String message){
 			JSONObject object = new JSONObject();
 			try {
-				object.put("loginSuccess", false);
-				object.put("authToken", "");
+				object.put("login_success", false);
+				object.put("auth_token", "");
 				object.put("device_id", "");
 				object.put("message", message);
 			} catch (JSONException e) {

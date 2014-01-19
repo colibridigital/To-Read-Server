@@ -42,17 +42,5 @@ public class Bootstrap {
 			
 			//Start the component.
 			component.start();
-			
-	/*		BookDAO dao = new BookDAO(MorphiaResource.INSTANCE.getMorphia(), MongoResource.INSTANCE.getMongoClient());
-			Book book = new Book();
-			Author author = new Author();
-			author.setFirstName("James");
-			author.setLastName("Cross");
-			book.addAuthor(author);
-			book.setTitle("There and back again");
-			book.setPublisher("Tolkein books");
-			
-			dao.save(book, WriteConcern.ACKNOWLEDGED);
-			System.out.println(("done"));*/
 		}
 }

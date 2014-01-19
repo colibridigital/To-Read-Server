@@ -1,8 +1,13 @@
 package com.colibri.toread.auth;
 
-import com.colibri.toread.ToReadBaseEntity;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class Device extends ToReadBaseEntity {
+import com.colibri.toread.Jsonifiable;
+import com.colibri.toread.ToReadBaseEntity;
+import com.sun.org.apache.bcel.internal.classfile.Field;
+
+public class Device extends ToReadBaseEntity implements Jsonifiable{
 	private String device_os_id;
 	private String device_make;
 	private String device_model;
@@ -55,5 +60,18 @@ public class Device extends ToReadBaseEntity {
 			return false;
 		
 		return this.auth_token.validateToken(token);
+	}
+	
+	public JSONObject toJson(){
+		JSONObject object = new JSONObject();
+		
+		try {
+			object.put("tr_device_id", getObjectId().toString());
+			object.put("auth_token", auth_token.getToken());
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	
+		return object;
 	}
 }

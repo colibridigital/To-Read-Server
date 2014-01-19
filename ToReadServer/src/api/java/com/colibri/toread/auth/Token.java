@@ -18,6 +18,10 @@ public class Token {
 			return false;
 	}
 	
+	public String getToken(){
+		return secureToken;
+	}
+	
 	private String generateCookie() {
 		// Create a random authentication token to be used with the device, in
 		// the same way we create a salt for passwords

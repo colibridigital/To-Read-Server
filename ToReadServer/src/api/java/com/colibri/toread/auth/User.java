@@ -5,6 +5,8 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.bson.types.ObjectId;
+
 import com.colibri.toread.ToReadBaseEntity;
 import com.google.code.morphia.annotations.Indexed;
 
@@ -16,7 +18,10 @@ public class User extends ToReadBaseEntity {
 	private String first_name;
 	private String last_name;
 	private Date dob;
-
+	//Index list of book ids so we can retrieve the books as user has without holding
+	//direct copies of them
+	@Indexed
+	private ArrayList<ObjectId> book_list = new ArrayList<ObjectId>();
 
 	public void setNewPassword(String password){
 		try {
@@ -46,9 +51,7 @@ public class User extends ToReadBaseEntity {
 	}
 
 	//Add a new device to this user object
-	public void addDevice(){
-		Device newDevice = new Device();
-		
+	public void addDevice(Device newDevice){
 		devices.add(newDevice);
 	}
 	
@@ -63,6 +66,10 @@ public class User extends ToReadBaseEntity {
 	
 	public void setUserName(String user_name){
 		this.user_name = user_name;
+	}
+	
+	public ArrayList<ObjectId> getBookIds(){
+		return this.book_list;
 	}
 }
 	

@@ -1,7 +1,5 @@
 package com.colibri.toread.persistence;
 
-import java.net.UnknownHostException;
-
 import com.colibri.toread.ReadProperties;
 import com.google.code.morphia.Morphia;
 
