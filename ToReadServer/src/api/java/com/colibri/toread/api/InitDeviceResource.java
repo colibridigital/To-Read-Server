@@ -1,6 +1,5 @@
 package com.colibri.toread.api;
 
-import org.bson.types.ObjectId;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.restlet.data.Form;

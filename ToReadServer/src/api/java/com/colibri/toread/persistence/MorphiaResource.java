@@ -27,7 +27,6 @@ public enum MorphiaResource {
 			Class cn = Class.forName(className);
 			morphia.map(cn);
 		}	
-		
 		return(morphia);
 	}
 	

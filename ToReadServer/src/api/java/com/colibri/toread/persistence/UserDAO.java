@@ -14,7 +14,7 @@ import com.mongodb.MongoClient;
 
 public class UserDAO extends BasicDAO<User, ObjectId> {
 	public UserDAO( Morphia morphia, MongoClient mongo) {
-		super(mongo, morphia, "userCollection");
+		super(mongo, morphia, "ToRead");
 	}
 	
 	public User findByUsername(String username){

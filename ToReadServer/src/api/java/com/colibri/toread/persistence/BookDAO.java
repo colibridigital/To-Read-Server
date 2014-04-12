@@ -13,13 +13,12 @@ import com.mongodb.MongoClient;
 
 public class BookDAO extends BasicDAO<Book, ObjectId> {
 	public BookDAO( Morphia morphia, MongoClient mongo) {
-		super(mongo, morphia, "bookCollection");
+		super(mongo, morphia, "ToRead");
 	}
 	
 	public ArrayList<Book> getBooksForUser(String user_id){
 		ArrayList<Book> bookList = new ArrayList<Book>();
-		
-		
+			
 		return bookList;
 	}
 }

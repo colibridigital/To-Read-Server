@@ -6,6 +6,7 @@ import org.restlet.routing.Router;
 
 import com.colibri.toread.api.InitDeviceResource;
 import com.colibri.toread.api.LoginResource;
+import com.colibri.toread.api.NewUserResource;
 
 public class ToReadApplication extends Application {
 
@@ -18,7 +19,8 @@ public class ToReadApplication extends Application {
 
 		router.attach("/initdevice", InitDeviceResource.class);
 		router.attach("/login", LoginResource.class);
-		
+		router.attach("/register", NewUserResource.class);
+				
 		return router;
 	}
 

@@ -22,7 +22,7 @@ public class Persistence {
 		
 		MongoClient mongoClient = new MongoClient(Arrays.asList(new ServerAddress(host, port)));
 		Morphia morphia = new Morphia();
-		Datastore ds = morphia.createDatastore(mongoClient, "database");
+		Datastore ds = morphia.createDatastore(mongoClient, "ToRead");
+		System.out.println("Persistent initialised");
 	}
-	
 }

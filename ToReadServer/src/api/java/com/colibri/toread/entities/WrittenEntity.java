@@ -11,8 +11,8 @@ public class WrittenEntity extends ToReadBaseEntity {
 	private ArrayList<Author> authors = new ArrayList<Author>();
 	private int edition;
 	private String publisher;
-	private Date publish_date;
-	private String cover_photo_url;
+	private Date publishDate;
+	private String coverURL;
 	
 	public String getTitle() {
 		return title;
@@ -38,17 +38,17 @@ public class WrittenEntity extends ToReadBaseEntity {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
-	public Date getPublish_date() {
-		return publish_date;
+	public Date getPublishDate() {
+		return publishDate;
 	}
-	public void setPublish_date(Date publish_date) {
-		this.publish_date = publish_date;
+	public void setPublishDate(Date publish_date) {
+		this.publishDate = publish_date;
 	}
-	public String getCover_photo_url() {
-		return cover_photo_url;
+	public String getcoverURL() {
+		return coverURL;
 	}
-	public void setCover_photo_url(String cover_photo_url) {
-		this.cover_photo_url = cover_photo_url;
+	public void setCoverURL(String cover_photo_url) {
+		this.coverURL = cover_photo_url;
 	}
 	
 	public void addAuthor(Author newAuthor) {
