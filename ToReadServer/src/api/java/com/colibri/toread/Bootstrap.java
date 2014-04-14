@@ -1,20 +1,16 @@
 package com.colibri.toread;
 
-import com.colibri.toread.entities.Author;
-import com.colibri.toread.entities.Book;
-import com.colibri.toread.persistence.BookDAO;
-import com.colibri.toread.persistence.MongoResource;
-import com.colibri.toread.persistence.MorphiaResource;
-import com.colibri.toread.web.*;
-import com.mongodb.WriteConcern;
-
+import org.apache.log4j.Logger;
 import org.restlet.Component;
 import org.restlet.Server;
 import org.restlet.data.Parameter;
 import org.restlet.data.Protocol;
 import org.restlet.util.Series;
 
+import com.colibri.toread.web.WebApplication;
+
 public class Bootstrap {
+	static Logger logger = Logger.getLogger(Bootstrap.class);
 		public static void main(String[] args) throws Exception {
 
 			//Create a new Component.
@@ -34,17 +30,17 @@ public class Bootstrap {
 //			params.add("keyPassword", "password");
 //			params.add("keystoreType", "JKS");
 			
-			BookDAO dao = new BookDAO(MorphiaResource.INSTANCE.getMorphia(), MongoResource.INSTANCE.getMongoClient());
-						Book book = new Book();
-						Author author = new Author();
-						author.setFirstName("James");
-						author.setLastName("Cross");
-						book.addAuthor(author);
-						book.setTitle("There and back again");
-					book.setPublisher("Tolkein books");
-						
-						dao.save(book, WriteConcern.ACKNOWLEDGED);
-						System.out.println(("done"));
+//			BookDAO dao = new BookDAO();
+//						Book book = new Book();
+//						Author author = new Author();
+//						author.setFirstName("James");
+//						author.setLastName("Cross");
+//						book.addAuthor(author);
+//						book.setTitle("There and back again");
+//					book.setPublisher("Tolkein books");
+//						
+//						dao.save(book, WriteConcern.ACKNOWLEDGED);
+//						System.out.println(("done"));
 
 			component.getDefaultHost().attach("/web", new WebApplication());
 			component.getDefaultHost().attach("/api", new ToReadApplication());

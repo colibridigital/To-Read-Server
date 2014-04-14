@@ -2,8 +2,8 @@ package com.colibri.toread.log;
 
 import java.util.Date;
 
-import com.colibri.toread.auth.Device;
 import com.colibri.toread.ToReadBaseEntity;
+import com.colibri.toread.auth.Device;
 import com.colibri.toread.auth.User;
 
 public class AccessLog extends ToReadBaseEntity {

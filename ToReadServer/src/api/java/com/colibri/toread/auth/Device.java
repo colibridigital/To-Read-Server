@@ -1,65 +1,136 @@
 package com.colibri.toread.auth;
 
+import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.colibri.toread.Jsonifiable;
 import com.colibri.toread.ToReadBaseEntity;
-import com.sun.org.apache.bcel.internal.classfile.Field;
 
 public class Device extends ToReadBaseEntity implements Jsonifiable{
-	private String device_os_id;
-	private String device_make;
-	private String device_model;
+	private String deviceOSId;
+	private String deviceMake;
+	private String deviceModel;
 	private String platform;
-	private String os_version;
-	private String cellular_network;
-	private Token auth_token;
+	private String osVersion;
+	private String cellularNetwork;
+	private Token authToken = new Token();
+	
+	private static Logger logger = Logger.getLogger(Device.class);
 	
 	public Device(){
-		this.auth_token.generateToken();
+		this.authToken.generateToken();
 	}
-	public String getDevice_os_id() {
-		return device_os_id;
+	
+	public boolean deviceFromJSON(JSONObject json) {
+		try {
+			if(json.has("deviceOSId") ) {
+				this.setDeviceOSId(json.getString("deviceOSId"));
+			}
+			else {
+				logger.error("Device OS Id field not found in user info JSON");
+				return false;
+			}
+			
+			if(json.has("device_make") ) {
+				this.setDeviceMake(json.getString("device_make"));
+			}
+			else {
+				logger.error("Device make field not found in user info JSON");
+				return false;
+			}
+			
+			if(json.has("device_model") ) {
+				this.setDeviceModel(json.getString("device_model"));
+			}
+			else {
+				logger.error("Device model field not found in user info JSON");
+				return false;
+			}
+			
+			if(json.has("platform") ) {
+				this.setPlatform(json.getString("platform"));
+			}
+			else {
+				logger.error("Platform field not found in user info JSON");
+				return false;
+			}
+			
+			//Non essential fields
+			if(json.has("os_version") ) {
+				this.setOsVersion(json.getString("osVersion"));
+			}
+			
+			if(json.has("cell_network") ) {
+				this.setCellularNetwork(json.getString("cell_network"));
+			}
+					
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
+		return true;
 	}
-	public void setDevice_os_id(String device_os_id) {
-		this.device_os_id = device_os_id;
+	
+
+	
+	public String getDeviceOSId() {
+		return deviceOSId;
 	}
-	public String getDevice_make() {
-		return device_make;
+
+	public void setDeviceOSId(String deviceOSId) {
+		this.deviceOSId = deviceOSId;
 	}
-	public void setDevice_make(String device_make) {
-		this.device_make = device_make;
+
+	public String getDeviceMake() {
+		return deviceMake;
 	}
-	public String getDevice_model() {
-		return device_model;
+
+	public void setDeviceMake(String deviceMake) {
+		this.deviceMake = deviceMake;
 	}
-	public void setDevice_model(String device_model) {
-		this.device_model = device_model;
+
+	public String getDeviceModel() {
+		return deviceModel;
 	}
+
+	public void setDeviceModel(String deviceModel) {
+		this.deviceModel = deviceModel;
+	}
+
 	public String getPlatform() {
 		return platform;
 	}
+
 	public void setPlatform(String platform) {
 		this.platform = platform;
 	}
-	public String getOs_version() {
-		return os_version;
+
+	public String getOsVersion() {
+		return osVersion;
 	}
-	public void setOs_version(String os_version) {
-		this.os_version = os_version;
+
+	public void setOsVersion(String osVersion) {
+		this.osVersion = osVersion;
 	}
-	public String getCellular_network() {
-		return cellular_network;
+
+	public String getCellularNetwork() {
+		return cellularNetwork;
 	}
-	public void setCellular_network(String cellular_network) {
-		this.cellular_network = cellular_network;
-	}	
+
+	public void setCellularNetwork(String cellularNetwork) {
+		this.cellularNetwork = cellularNetwork;
+	}
+
+	public void setAuthToken(Token authToken) {
+		this.authToken = authToken;
+	}
+
 	public boolean validateToken(String token){
-		if(auth_token == null)
+		if(authToken == null)
 			return false;
 		
-		return this.auth_token.validateToken(token);
+		return this.authToken.validateToken(token);
 	}
 	
 	public JSONObject toJson(){
@@ -67,7 +138,7 @@ public class Device extends ToReadBaseEntity implements Jsonifiable{
 		
 		try {
 			object.put("tr_device_id", getObjectId().toString());
-			object.put("auth_token", auth_token.getToken());
+			object.put("auth_token", authToken.getToken());
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}

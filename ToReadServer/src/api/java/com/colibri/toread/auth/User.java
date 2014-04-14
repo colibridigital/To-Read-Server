@@ -6,54 +6,101 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Locale;
 
+import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.colibri.toread.ToReadBaseEntity;
+import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Indexed;
+import com.google.code.morphia.utils.IndexDirection;
 
 @Entity
 public class User extends ToReadBaseEntity {
+	@Indexed(value=IndexDirection.ASC, name="userNameIndex", unique=true)
 	private String userName;
 	private String emailAddress;
 	private Password password;
+	@Embedded
 	private ArrayList<Device> devices = new ArrayList<Device>(); //All of a users registered devices
 	private String firstName;
 	private String lastName;
 	private Date dob;
+	
 	//Index list of book ids so we can retrieve the books as user has without holding
 	//direct copies of them
-	private ArrayList<ObjectId> book_list = new ArrayList<ObjectId>();
+	//Map of object ID to boolean flag indicating if the book has been read or not
+	private HashMap<ObjectId, Boolean> bookMap = new HashMap<ObjectId, Boolean>();
+	private HashSet<ObjectId> deletedBooks = new HashSet<ObjectId>();
+	
+	private static Logger logger = Logger.getLogger(User.class);
 	
 	public User() {	
 	}
 	
-	public User(JSONObject json) {
+	public boolean userFromJSON(JSONObject json) {
 		try {
-			this.setUserName(json.getString("username"));
-			this.setEmailAddress(json.getString("email_address"));
-			this.setFirstName(json.getString("first_name"));
-			this.setLastName(json.getString("last_name"));
+			if(json.has("username") ) {
+				this.setUserName(json.getString("username"));
+			}
+			else {
+				logger.error("Username field not found in user info JSON");
+				return false;
+			}
 			
-			if(json.has("publish_date") ) {
-				String dateString = json.getString("publish_date");
+			if(json.has("first_name") ) {
+				this.setFirstName(json.getString("first_name"));
+			}
+			else {
+				logger.error("First name field not found in user info JSON");
+				return false;
+			}
+			
+			if(json.has("last_name") ) {
+				this.setLastName(json.getString("last_name"));
+			}
+			else {
+				logger.error("Last name field not found in user info JSON");
+				return false;
+			}
+			
+			if(json.has("email_address") ) {
+				this.setEmailAddress(json.getString("email_address"));
+			}
+			else {
+				logger.error("Email address field not found in user info JSON");
+				return false;
+			}
+			
+			if(json.has("password") ) {
+				this.setNewPassword(json.getString("password"));
+			}
+			else {
+				logger.error("Password field not found in user info JSON");
+				return false;
+			}
+						
+			if(json.has("dob") ) {
+				String dateString = json.getString("dob");
 				//E.g "January 2, 2010"
 				Date date = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH).parse(dateString);
 				this.setDob(date);
-			}
-			
-			//Encrypt the password
-			this.setNewPassword(json.getString("password"));		
+			}	
 		} catch (JSONException e) {
 			e.printStackTrace();
 		} catch (ParseException e) {
 			e.printStackTrace();
-		}
+		}	
+		
+		return true;
 	}
+	
 	
 	public void setNewPassword(String password){
 		try {
@@ -82,6 +129,14 @@ public class User extends ToReadBaseEntity {
 		
 		return false;
 	}
+	
+	public void markAsDeleted(ObjectId bookId) {
+		//Remove a book from the active map and move to the deleted set
+		deletedBooks.add(bookId);
+		bookMap.remove(bookId);
+		
+		logger.info("Book Id " + bookId.toString() + " was marked for deletion");
+	}
 
 	//Add a new device to this user object
 	public void addDevice(Device newDevice){
@@ -101,8 +156,8 @@ public class User extends ToReadBaseEntity {
 		this.userName = userName;
 	}
 	
-	public ArrayList<ObjectId> getBookIds(){
-		return this.book_list;
+	public HashMap<ObjectId, Boolean> getBookIds(){
+		return this.bookMap;
 	}
 
 	public String getEmailAddress() {
@@ -149,12 +204,16 @@ public class User extends ToReadBaseEntity {
 		this.dob = dob;
 	}
 
-	public ArrayList<ObjectId> getBook_list() {
-		return book_list;
+	public HashMap<ObjectId, Boolean> getbookMap() {
+		return bookMap;
+	}
+	
+	public boolean hasBook(ObjectId bookId) {
+		return bookMap.containsKey(bookId);
 	}
 
-	public void setBook_list(ArrayList<ObjectId> book_list) {
-		this.book_list = book_list;
+	public void setbookMap(HashMap<ObjectId, Boolean> bookMap) {
+		this.bookMap = bookMap;
 	}
 
 	public String getUserName() {

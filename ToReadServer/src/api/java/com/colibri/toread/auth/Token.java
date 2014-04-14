@@ -1,8 +1,9 @@
 package com.colibri.toread.auth;
 
-import com.colibri.toread.ReadProperties;
 import java.math.BigInteger;
 import java.security.SecureRandom;
+
+import com.colibri.toread.ReadProperties;
 
 public class Token {
 	private String secureToken;

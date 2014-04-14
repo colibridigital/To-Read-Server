@@ -4,23 +4,14 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.math.BigInteger;
-import java.security.SecureRandom;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
 
-//import org.apache.log4j.Logger;
-import org.restlet.data.Cookie;
-import org.restlet.data.CookieSetting;
-import org.restlet.data.Form;
 import org.restlet.data.MediaType;
 import org.restlet.representation.Representation;
 import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
 import org.restlet.resource.ServerResource;
-import org.restlet.util.Series;
+//import org.apache.log4j.Logger;
 
 public class WebLoginResource extends ServerResource {
 //	private static Logger logger = Logger.getLogger(WebLoginResource.class);

@@ -1,6 +1,5 @@
 package com.colibri.toread.api;
 
-import org.bson.types.ObjectId;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.restlet.data.Form;
@@ -11,10 +10,7 @@ import org.restlet.resource.Post;
 import org.restlet.resource.ServerResource;
 
 import com.colibri.toread.auth.Device;
-import com.colibri.toread.auth.Token;
 import com.colibri.toread.auth.User;
-import com.colibri.toread.persistence.MongoResource;
-import com.colibri.toread.persistence.MorphiaResource;
 import com.colibri.toread.persistence.UserDAO;
 
 public class LoginResource extends ServerResource {
@@ -36,7 +32,7 @@ public class LoginResource extends ServerResource {
 					getErrorRepresentation("Invalid username or password")
 				);
 		
-		UserDAO dao = new UserDAO(MorphiaResource.INSTANCE.getMorphia(), MongoResource.INSTANCE.getMongoClient());
+		UserDAO dao = new UserDAO();
 		User thisUser = dao.findByUsername(username);
 		
 		//User doesnt exist
@@ -57,12 +53,6 @@ public class LoginResource extends ServerResource {
 		//would have a copy of the device id and auth token and would bypass
 		//the login screen
 		Device thisDevice = new Device();
-		thisDevice.setDevice_os_id(form.getFirstValue("os_id"));
-		thisDevice.setDevice_make(form.getFirstValue("make"));
-		thisDevice.setDevice_model(form.getFirstValue("model"));
-		thisDevice.setCellular_network(form.getFirstValue("network"));
-		thisDevice.setDevice_model(form.getFirstValue("model"));
-		thisDevice.setOs_version(form.getFirstValue("os_version"));
 		thisDevice.setPlatform(form.getFirstValue("platform"));
 		
 		//Add the device to the user

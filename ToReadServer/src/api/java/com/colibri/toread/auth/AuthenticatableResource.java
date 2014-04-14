@@ -1,43 +1,66 @@
 package com.colibri.toread.auth;
 
+import java.io.IOException;
+
+import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.restlet.data.Form;
 import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.ServerResource;
 
-import com.colibri.toread.persistence.MongoResource;
-import com.colibri.toread.persistence.MorphiaResource;
 import com.colibri.toread.persistence.UserDAO;
 
 public class AuthenticatableResource extends ServerResource{
+	Logger logger = Logger.getLogger(AuthenticatableResource.class);
+	
 	public boolean authenticateRequest(Representation entity){
-		//Find the user for this device and load them, also loading the device
-		//We will need to load the user later anyway so we may as well cache it up front
-		//Then grab this exact device from memory and authenticate the supplied auth token
-		//Against the one we have in the database for it
-		Form form = new Form(entity);
+		String username = "";
+		String deviceId = "";
+		String token = "";
+		JSONObject json;
 		
-		String device_id = form.getFirstValue("tr_device_id");
-		String auth_token = form.getFirstValue("auth_token");
+		try {
+			json = new JsonRepresentation(entity).getJsonObject();
+			JSONObject authData;
+			
+			if(json.has("auth_data"))
+				authData = json.getJSONObject("auth_data");
+			else
+				return false;
+			
+			if(authData.has("username") && authData.has("device_id") &&json.has("token")) {
+				username = authData.getString("username");
+				deviceId = authData.getString("device_id");
+				token = json.getString("token");
+			}
+			else
+				return false;
+			} catch (JSONException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		
-		UserDAO dao = new UserDAO(MorphiaResource.INSTANCE.getMorphia(), MongoResource.INSTANCE.getMongoClient());
-		User user = dao.findByDeviceId(device_id);
-		Device thisDevice = user.findDevice(device_id);
+		logger.info("Authenticating " + username + " with device " + deviceId);
 		
-		return thisDevice.validateToken(auth_token);
+		UserDAO dao = new UserDAO();
+		User user = dao.findByUsername(username);
+		Device device = user.findDevice(deviceId);
+		
+		return device.validateToken(token);
 	}
 	
-	public Representation getErrorResponse(){
+	public JsonRepresentation authenticationError(){
 		JSONObject object = new JSONObject();
 		try {
-			object.append("authenticated", false);
-			object.append("message", "Device authentication failed");
+			object.put("auth_result", false);
+			object.put("message", "Invalid auth token");
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		
-		return(new JsonRepresentation(object));
+
+		logger.warn("Device authentication failed");		
+		return new JsonRepresentation(object);
 	}
 }

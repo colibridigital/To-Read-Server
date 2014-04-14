@@ -33,6 +33,7 @@ dependencies {
     apiCompile group: 'org.restlet.jse', name: 'org.restlet.ext.ssl', version: '2.1.4'
     apiCompile 'org.mongodb:mongo-java-driver:2.11.3'
     apiCompile 'com.google.code.morphia:morphia:0.102'
+    apiCompile 'log4j:log4j:1.2.16'
 
     implCompile sourceSets.api.output
     implCompile 'commons-lang:commons-lang:2.6'    
