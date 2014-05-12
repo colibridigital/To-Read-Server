@@ -13,9 +13,11 @@ public class Book extends WrittenEntity{
 	public Book() {
 	}
 	
+	
 	public Book(JSONObject json) {
 		try {
 			this.setTitle(json.getString("title"));
+			this.setISBN(json.getString("ISBN"));
 			this.setEdition(json.getInt("edition"));
 			this.setCoverURL(json.getString("cover_url"));
 			

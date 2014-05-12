@@ -11,10 +11,4 @@ public class BookDAO extends BasicDAO<Book, ObjectId> {
 	public BookDAO() {
 		super(Book.class, MongoConnectionManager.instance().getDb());
 	}
-	
-	public ArrayList<Book> getBooksForUser(String user_id){
-		ArrayList<Book> bookList = new ArrayList<Book>();
-			
-		return bookList;
-	}
 }

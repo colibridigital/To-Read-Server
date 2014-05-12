@@ -1,27 +1,22 @@
 package com.colibri.toread.auth;
 
-import java.io.IOException;
-
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.restlet.ext.json.JsonRepresentation;
-import org.restlet.representation.Representation;
-import org.restlet.resource.ServerResource;
 
+import com.colibri.toread.api.LoggableResource;
 import com.colibri.toread.persistence.UserDAO;
 
-public class AuthenticatableResource extends ServerResource{
+public class AuthenticatableResource extends LoggableResource{
 	Logger logger = Logger.getLogger(AuthenticatableResource.class);
 	
-	public boolean authenticateRequest(Representation entity){
+	public boolean authenticateRequest(JSONObject json){
 		String username = "";
 		String deviceId = "";
 		String token = "";
-		JSONObject json;
 		
 		try {
-			json = new JsonRepresentation(entity).getJsonObject();
 			JSONObject authData;
 			
 			if(json.has("auth_data"))
@@ -29,18 +24,16 @@ public class AuthenticatableResource extends ServerResource{
 			else
 				return false;
 			
-			if(authData.has("username") && authData.has("device_id") &&json.has("token")) {
+			if(authData.has("username") && authData.has("device_id") && authData.has("token")) {
 				username = authData.getString("username");
 				deviceId = authData.getString("device_id");
-				token = json.getString("token");
+				token = authData.getString("token");
 			}
 			else
 				return false;
 			} catch (JSONException e) {
 				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			} 
 		
 		logger.info("Authenticating " + username + " with device " + deviceId);
 		

@@ -9,8 +9,7 @@ public class GetBooksResource extends AuthenticatableResource{
 
 	@Post
 	public Representation acceptItem(Representation entity) {	
-		if(!authenticateRequest(entity))
-				return authenticationError();
+	
 		return entity;
 	}
 }

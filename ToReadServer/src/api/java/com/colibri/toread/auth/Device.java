@@ -1,6 +1,7 @@
 package com.colibri.toread.auth;
 
 import org.apache.log4j.Logger;
+import org.bson.types.ObjectId;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -14,12 +15,14 @@ public class Device extends ToReadBaseEntity implements Jsonifiable{
 	private String platform;
 	private String osVersion;
 	private String cellularNetwork;
-	private Token authToken = new Token();
+	private Token authToken;
 	
 	private static Logger logger = Logger.getLogger(Device.class);
 	
 	public Device(){
+		this.authToken = new Token();
 		this.authToken.generateToken();
+		this.setObjectId(ObjectId.get());
 	}
 	
 	public boolean deviceFromJSON(JSONObject json) {
@@ -131,6 +134,10 @@ public class Device extends ToReadBaseEntity implements Jsonifiable{
 			return false;
 		
 		return this.authToken.validateToken(token);
+	}
+	
+	public String getToken() {
+		return authToken.getToken();
 	}
 	
 	public JSONObject toJson(){

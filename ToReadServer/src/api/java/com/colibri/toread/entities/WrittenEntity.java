@@ -5,9 +5,13 @@ import java.util.Date;
 
 import com.colibri.toread.ToReadBaseEntity;
 import com.google.code.morphia.annotations.Indexed;
+import com.google.code.morphia.utils.IndexDirection;
 
 public class WrittenEntity extends ToReadBaseEntity {
-	@Indexed private String title;
+	@Indexed (value=IndexDirection.ASC, name="bookNameIndex", unique=false)
+	private String title;
+	@Indexed (value=IndexDirection.ASC, name="bookISBNIndex", unique=true)
+	private String ISBN;
 	private ArrayList<Author> authors = new ArrayList<Author>();
 	private int edition;
 	private String publisher;
@@ -20,6 +24,15 @@ public class WrittenEntity extends ToReadBaseEntity {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
+	public String getISBN() {
+		return ISBN;
+	}
+	
+	public void setISBN(String newISBN) {
+		this.ISBN = newISBN;
+	}
+	
 	public ArrayList<Author> getAuthors() {
 		return authors;
 	}

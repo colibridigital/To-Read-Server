@@ -12,9 +12,11 @@ import java.util.Locale;
 
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.colibri.toread.Jsonifiable;
 import com.colibri.toread.ToReadBaseEntity;
 import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.annotations.Entity;
@@ -22,7 +24,7 @@ import com.google.code.morphia.annotations.Indexed;
 import com.google.code.morphia.utils.IndexDirection;
 
 @Entity
-public class User extends ToReadBaseEntity {
+public class User extends ToReadBaseEntity implements Jsonifiable{
 	@Indexed(value=IndexDirection.ASC, name="userNameIndex", unique=true)
 	private String userName;
 	private String emailAddress;
@@ -101,6 +103,41 @@ public class User extends ToReadBaseEntity {
 		return true;
 	}
 	
+	//Use a mongo format object Id as the starting point
+	public void generateRandomUsername() {
+		this.userName = ObjectId.get().toString();
+	}
+	
+	public JSONObject toJson() {
+		JSONObject json = new JSONObject();
+		
+		try {
+			json.put("user_name", userName);
+			
+			if(emailAddress != null) 
+				json.put("email_addres", emailAddress);
+			
+			if(firstName != null)
+				json.put("first_name", firstName);
+			
+			if(lastName != null)
+				json.put("last_name", lastName);
+			
+			if(dob != null)
+				json.put("dob", dob);
+			
+			JSONArray jsonArray = new JSONArray();
+			for(Device device : devices) {
+				jsonArray.put(device.toJson());
+			}
+			
+			json.put("devices", jsonArray);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
+		return json;
+	}
 	
 	public void setNewPassword(String password){
 		try {
@@ -136,6 +173,10 @@ public class User extends ToReadBaseEntity {
 		bookMap.remove(bookId);
 		
 		logger.info("Book Id " + bookId.toString() + " was marked for deletion");
+	}
+	
+	public void addBook(ObjectId newBook) {
+		bookMap.put(newBook, false);
 	}
 
 	//Add a new device to this user object

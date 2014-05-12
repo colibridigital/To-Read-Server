@@ -1,5 +1,7 @@
 package com.colibri.toread.api;
 
+import java.io.IOException;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.restlet.data.Form;
@@ -7,13 +9,12 @@ import org.restlet.ext.json.JsonRepresentation;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
-import org.restlet.resource.ServerResource;
 
 import com.colibri.toread.auth.Device;
 import com.colibri.toread.auth.User;
 import com.colibri.toread.persistence.UserDAO;
 
-public class LoginResource extends ServerResource {
+public class LoginResource extends LoggableResource {
 
 	@Get
 	public String represent() {
@@ -21,7 +22,7 @@ public class LoginResource extends ServerResource {
 	}
 	
 	@Post
-	public Representation acceptItem(Representation entity) {		
+	public Representation acceptItem(Representation entity) throws JSONException, IOException {		
 		System.out.println("User attempting to login");
 		Form form = new Form(entity);
 		
