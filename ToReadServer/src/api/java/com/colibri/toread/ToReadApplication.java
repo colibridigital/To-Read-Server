@@ -4,6 +4,7 @@ import org.restlet.Application;
 import org.restlet.Restlet;
 import org.restlet.routing.Router;
 
+import com.colibri.toread.api.AddNewBooksResource;
 import com.colibri.toread.api.ClientListResource;
 import com.colibri.toread.api.InitDeviceResource;
 import com.colibri.toread.api.LoginResource;
@@ -28,6 +29,7 @@ public class ToReadApplication extends Application {
 		//Take a client list of books and cross reference them against the database.  Delete books not present and return the elements
 		//we know nothing about
 		router.attach("/sync/clientlist", ClientListResource.class);
+		router.attach("/sync/addbooks", AddNewBooksResource.class);
 				
 		return router;
 	}

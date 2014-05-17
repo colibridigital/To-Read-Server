@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Locale;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
@@ -170,13 +172,20 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 	public void markAsDeleted(ObjectId bookId) {
 		//Remove a book from the active map and move to the deleted set
 		deletedBooks.add(bookId);
-		bookMap.remove(bookId);
-		
 		logger.info("Book Id " + bookId.toString() + " was marked for deletion");
 	}
 	
 	public void addBook(ObjectId newBook) {
-		bookMap.put(newBook, false);
+		if(!bookMap.containsKey(newBook)) {
+			bookMap.put(newBook, false);
+			logger.info("Added book to the user");
+		}
+		else
+			logger.info("User already has this book, skipping");
+		if(deletedBooks.contains(newBook)) {
+			deletedBooks.remove(newBook);
+			logger.info("User has this book marked as deleted, removing from that list");
+		}
 	}
 
 	//Add a new device to this user object
@@ -193,14 +202,22 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 		return null;
 	}
 	
+	public void processClientBooks(HashSet<ObjectId> clientsBooks) {
+		for(Iterator<Map.Entry<ObjectId, Boolean>> it = bookMap.entrySet().iterator(); it.hasNext(); ) {
+			Map.Entry<ObjectId, Boolean> entry = it.next();
+
+			//Book is deleted
+			if(!clientsBooks.contains(entry.getKey())) {
+				markAsDeleted(entry.getKey()); 
+				it.remove();
+			}
+		}
+	}
+	
 	public void setUserName(String userName){
 		this.userName = userName;
 	}
 	
-	public HashMap<ObjectId, Boolean> getBookIds(){
-		return this.bookMap;
-	}
-
 	public String getEmailAddress() {
 		return emailAddress;
 	}
@@ -244,17 +261,9 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 	public void setDob(Date dob) {
 		this.dob = dob;
 	}
-
-	public HashMap<ObjectId, Boolean> getbookMap() {
-		return bookMap;
-	}
 	
 	public boolean hasBook(ObjectId bookId) {
 		return bookMap.containsKey(bookId);
-	}
-
-	public void setbookMap(HashMap<ObjectId, Boolean> bookMap) {
-		this.bookMap = bookMap;
 	}
 
 	public String getUserName() {

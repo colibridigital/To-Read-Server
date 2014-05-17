@@ -9,7 +9,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Book extends WrittenEntity{
+import com.colibri.toread.Jsonifiable;
+
+public class Book extends WrittenEntity implements Jsonifiable{
 	public Book() {
 	}
 	
@@ -21,20 +23,24 @@ public class Book extends WrittenEntity{
 			this.setEdition(json.getInt("edition"));
 			this.setCoverURL(json.getString("cover_url"));
 			
-			////E.g "January 2, 2010"
-			Date date = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH).parse(json.getString("publish_date"));
-			this.setPublishDate(date);
-			
 			//Get authors
-			JSONArray authors = json.getJSONArray("authors");
-			for(int i = 0; i < authors.length(); i++) {
-				JSONObject thisAuthor = authors.getJSONObject(i);
+			if(json.has("authors")) {
+				JSONArray authors = json.getJSONArray("authors");
+				for(int i = 0; i < authors.length(); i++) {
+					JSONObject thisAuthor = authors.getJSONObject(i);
 				
-				Author newAuthor = new Author();
-				newAuthor.setFirstName(thisAuthor.getString("first_name"));
-				newAuthor.setLastName(thisAuthor.getString("last_name"));
+					Author newAuthor = new Author();
+					newAuthor.setFirstName(thisAuthor.getString("first_name"));
+					newAuthor.setLastName(thisAuthor.getString("last_name"));
 
-				this.addAuthor(newAuthor);
+					this.addAuthor(newAuthor);
+				}
+			}
+			
+			if(json.has("publish_date")) {
+			////E.g "January 2, 2010"
+				Date date = new SimpleDateFormat("MMMM d, yyyy", Locale.ENGLISH).parse(json.getString("publish_date"));
+				this.setPublishDate(date);
 			}
 			
 		} catch (JSONException e) {
@@ -42,5 +48,20 @@ public class Book extends WrittenEntity{
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public JSONObject toJson() {
+		JSONObject json = new JSONObject();
+		
+		try {
+			json.put("title", getTitle());
+			json.put("ISBN", getISBN());
+			json.put("id", getObjectId());
+			
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
+		return json;
 	}
 }

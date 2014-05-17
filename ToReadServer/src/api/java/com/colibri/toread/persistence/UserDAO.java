@@ -4,7 +4,6 @@ import org.bson.types.ObjectId;
 
 import com.colibri.toread.auth.User;
 import com.google.code.morphia.dao.BasicDAO;
-import com.google.code.morphia.query.Query;
 
 public class UserDAO extends BasicDAO<User, ObjectId> {
 	public UserDAO() {
