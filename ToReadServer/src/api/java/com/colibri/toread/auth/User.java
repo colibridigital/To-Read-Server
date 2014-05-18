@@ -20,6 +20,7 @@ import org.json.JSONObject;
 
 import com.colibri.toread.Jsonifiable;
 import com.colibri.toread.ToReadBaseEntity;
+import com.colibri.toread.userdata.UserBooks;
 import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Indexed;
@@ -42,6 +43,8 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 	//Map of object ID to boolean flag indicating if the book has been read or not
 	private HashMap<ObjectId, Boolean> bookMap = new HashMap<ObjectId, Boolean>();
 	private HashSet<ObjectId> deletedBooks = new HashSet<ObjectId>();
+	
+	private UserBooks myBooks;
 	
 	private static Logger logger = Logger.getLogger(User.class);
 	
