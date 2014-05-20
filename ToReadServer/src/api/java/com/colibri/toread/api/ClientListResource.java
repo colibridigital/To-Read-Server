@@ -2,8 +2,9 @@ package com.colibri.toread.api;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
@@ -63,8 +64,10 @@ public class ClientListResource extends AuthenticatableResource {
 	private JSONObject processBookList(User user, JSONArray clientBookList) {
 		logger.info("Begin processing of booklist for user " + user.getUserName());
 
-		ArrayList<String> newBooks = new ArrayList<String>();
-		HashSet<ObjectId> clientsBooks = new HashSet<ObjectId>();
+		//Map of ISBN to collection name
+		HashMap<String, String> newBooks = new HashMap<String, String>();
+		//Map of book object id to collection name
+		HashMap<String, ArrayList<ObjectId>> clientsBooks = new HashMap<String, ArrayList<ObjectId>>();
 		
 		//Current book object
 		JSONObject thisJSONBook;
@@ -76,19 +79,26 @@ public class ClientListResource extends AuthenticatableResource {
 		for(int i = 0; i < clientBookList.length(); i++) {		
 			try {
 				thisJSONBook = clientBookList.getJSONObject(i);
+				if(!thisJSONBook.has("collection")) {
+					logger.error("Book supplied without a collection with index " + i + " will skip");
+					continue;
+				}
 				
 				//We have an ISBN but no object ID, so it's a new book
 				if(thisJSONBook.has("ISBN") && !thisJSONBook.has("id") ) {
 					
 					String ISBN = thisJSONBook.getString("ISBN");
+					String collection = thisJSONBook.getString("collection");
+					
 					//Just make sure they arent sending us ISBNs again
-					if(!userHasISBN(ISBN, user))
-						newBooks.add(ISBN);
+					if(!userHasISBN(ISBN, collection, user))
+						newBooks.put(ISBN, collection);
 					else {
 						//We need to load this book and add it to the in memory store of client books
 						//So when we loop over the server books it's there and we know the client didnt delete it
 						logger.info("User already has this book so the ISBN " + ISBN + " is erroneous");
-						clientsBooks.add(loadBookFromISBN(ISBN).getObjectId());
+						
+						clientsBooks = addBookToClientsBooks(clientsBooks, loadBookFromISBN(ISBN).getObjectId(), collection);
 					}
 											
 					continue;
@@ -96,9 +106,11 @@ public class ClientListResource extends AuthenticatableResource {
 				
 				//The client already has an object ID for the book, hence we must have issued it, and the server knows about it
 				if(thisJSONBook.has("id") && !thisJSONBook.has("ISBN")) {			
+					
 					//Add this the hashset of clients books we know about already
 					ObjectId thisObjectId = new ObjectId(thisJSONBook.getString("id"));
-					clientsBooks.add(thisObjectId);
+					String collection = thisJSONBook.getString("Collection");
+					clientsBooks = addBookToClientsBooks(clientsBooks, thisObjectId, collection);
 					continue;
 				}					
 
@@ -124,11 +136,24 @@ public class ClientListResource extends AuthenticatableResource {
 		return bookListToJSON(newBooks);
 	}
 	
-	private boolean userHasISBN(String ISBN, User user) {
+	private HashMap<String, ArrayList<ObjectId>> addBookToClientsBooks(HashMap<String, ArrayList<ObjectId>> clientsBooks, ObjectId book, String collectionName) {
+		//If the collection does not exist in the map, add it
+		if(!clientsBooks.containsKey(collectionName))
+			clientsBooks.put(collectionName, new ArrayList<ObjectId>());
+		
+		//Get current collection
+		ArrayList<ObjectId> thisCollection = clientsBooks.get(collectionName);
+		thisCollection.add(book);
+		clientsBooks.put(collectionName, thisCollection);
+		
+		return clientsBooks;
+	}
+	
+	private boolean userHasISBN(String ISBN, String collection, User user) {
 		BookDAO bookDAO = new BookDAO();
 		if(bookDAO.exists("ISBN", ISBN)) {
 			Book thisBook = bookDAO.findByISBN(ISBN);
-			return user.hasBook(thisBook.getObjectId());
+			return user.hasBook(collection, thisBook.getObjectId());
 		}
 		
 		return false;
@@ -139,19 +164,20 @@ public class ClientListResource extends AuthenticatableResource {
 		return bookDAO.findByISBN(ISBN);
 	}
 	
-	private ArrayList<String> loadBooksFromDb(User user, ArrayList<String> newBooks) {
+	private HashMap<String, String> loadBooksFromDb(User user, HashMap<String, String> newBooks) {
 		BookDAO bookDAO = new BookDAO();
 		
 		//Loop over the books and check to see if they exist in the database, if they do then just add them directly
-		Iterator<String> it = newBooks.iterator();
-		while(it.hasNext()) {
-			String thisISBN = it.next();
+		//ISBN, Collection name
+		for(Iterator<Map.Entry<String, String>> it = newBooks.entrySet().iterator(); it.hasNext(); ) {
+			Map.Entry<String, String> thisEntry = it.next();
+			String thisISBN = thisEntry.getKey();
 			
 			if(bookDAO.exists("ISBN", thisISBN)) {
 				it.remove();	
 				//Find the object ID for the book with this ISBN
 				Book thisBook = bookDAO.findByISBN(thisISBN);
-				user.addBook(thisBook.getObjectId());
+				user.addBook(thisEntry.getValue(), thisBook.getObjectId());
 				logger.info("Added book with ISBN " + thisISBN + " to user, sent by client and already exists in the database");
 			}
 		}
@@ -159,11 +185,19 @@ public class ClientListResource extends AuthenticatableResource {
 		return newBooks;
 	}
 	
-	private JSONObject bookListToJSON(ArrayList<String> bookList) {
-		JSONObject listObject = new JSONObject();
-		JSONArray array = new JSONArray(bookList);
+	private JSONObject bookListToJSON(HashMap<String, String> bookList) {
 		
+		JSONObject listObject = new JSONObject();
+		JSONArray array = new JSONArray();
 		try {
+			for(Iterator<Map.Entry<String, String>> it = bookList.entrySet().iterator(); it.hasNext(); ) {
+				Map.Entry<String, String> thisEntry = it.next();
+
+				JSONObject bookObject = new JSONObject();
+				bookObject.put("ISBN", thisEntry.getKey());
+				bookObject.put("Collection", thisEntry.getValue());
+			}
+
 			listObject.put("book_list", array);
 		} catch (JSONException e) {
 			e.printStackTrace();

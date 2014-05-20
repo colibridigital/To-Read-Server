@@ -1,7 +1,14 @@
 package com.colibri.toread.userdata;
 
-public class BookStatus {
+import com.colibri.toread.ToReadBaseEntity;
+
+public class BookStatus extends ToReadBaseEntity{
 	private boolean isRead;
+	
+	//New unread book status
+	public BookStatus() {
+		markAsUnread();
+	}
 	
 	public boolean getIsRead() {
 		return this.isRead;

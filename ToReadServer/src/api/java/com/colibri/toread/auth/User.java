@@ -7,7 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Map;
@@ -32,19 +31,15 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 	private String userName;
 	private String emailAddress;
 	private Password password;
+	
 	@Embedded
 	private ArrayList<Device> devices = new ArrayList<Device>(); //All of a users registered devices
 	private String firstName;
 	private String lastName;
 	private Date dob;
 	
-	//Index list of book ids so we can retrieve the books as user has without holding
-	//direct copies of them
-	//Map of object ID to boolean flag indicating if the book has been read or not
-	private HashMap<ObjectId, Boolean> bookMap = new HashMap<ObjectId, Boolean>();
-	private HashSet<ObjectId> deletedBooks = new HashSet<ObjectId>();
-	
-	private UserBooks myBooks;
+	@Embedded
+	private UserBooks myBooks = new UserBooks();
 	
 	private static Logger logger = Logger.getLogger(User.class);
 	
@@ -172,23 +167,17 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 		return false;
 	}
 	
-	public void markAsDeleted(ObjectId bookId) {
-		//Remove a book from the active map and move to the deleted set
-		deletedBooks.add(bookId);
+	public void markAsDeleted(String collectionName, ObjectId bookId) {
+		logger.info("Deleting " + bookId + " from collection " + collectionName);
+		
+		if(!myBooks.markAsDeleted(collectionName, bookId))
+			logger.info("User didn't have the book in the first place, so won't do anything");
+		
 		logger.info("Book Id " + bookId.toString() + " was marked for deletion");
 	}
 	
-	public void addBook(ObjectId newBook) {
-		if(!bookMap.containsKey(newBook)) {
-			bookMap.put(newBook, false);
-			logger.info("Added book to the user");
-		}
-		else
-			logger.info("User already has this book, skipping");
-		if(deletedBooks.contains(newBook)) {
-			deletedBooks.remove(newBook);
-			logger.info("User has this book marked as deleted, removing from that list");
-		}
+	public void addBook(String collectionName, ObjectId newBook) {
+		myBooks.addBook(collectionName, newBook);
 	}
 
 	//Add a new device to this user object
@@ -205,15 +194,12 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 		return null;
 	}
 	
-	public void processClientBooks(HashSet<ObjectId> clientsBooks) {
-		for(Iterator<Map.Entry<ObjectId, Boolean>> it = bookMap.entrySet().iterator(); it.hasNext(); ) {
-			Map.Entry<ObjectId, Boolean> entry = it.next();
-
-			//Book is deleted
-			if(!clientsBooks.contains(entry.getKey())) {
-				markAsDeleted(entry.getKey()); 
-				it.remove();
-			}
+	public void processClientBooks(HashMap<String, ArrayList<ObjectId>> clientsBooks) {
+		//Loop over each collection one by one
+		for(Iterator<Map.Entry<String, ArrayList<ObjectId>>> it = clientsBooks.entrySet().iterator(); it.hasNext(); ) {
+			Map.Entry<String, ArrayList<ObjectId>> entry = it.next();
+			
+			myBooks.removeClientsDeletedBooks(entry.getKey(), entry.getValue());
 		}
 	}
 	
@@ -265,8 +251,8 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 		this.dob = dob;
 	}
 	
-	public boolean hasBook(ObjectId bookId) {
-		return bookMap.containsKey(bookId);
+	public boolean hasBook(String collectionName, ObjectId bookId) {
+		return myBooks.hasBook(collectionName, bookId);
 	}
 
 	public String getUserName() {
