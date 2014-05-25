@@ -96,7 +96,7 @@ public class ClientListResource extends AuthenticatableResource {
 					else {
 						//We need to load this book and add it to the in memory store of client books
 						//So when we loop over the server books it's there and we know the client didnt delete it
-						logger.info("User already has this book so the ISBN " + ISBN + " is erroneous");
+						logger.info("User already has this book in collection " + collection + " so the ISBN " + ISBN + " will be skipped for this collection");
 						
 						clientsBooks = addBookToClientsBooks(clientsBooks, loadBookFromISBN(ISBN).getObjectId(), collection);
 					}
@@ -196,6 +196,9 @@ public class ClientListResource extends AuthenticatableResource {
 				JSONObject bookObject = new JSONObject();
 				bookObject.put("ISBN", thisEntry.getKey());
 				bookObject.put("Collection", thisEntry.getValue());
+				
+				logger.info("Requesting book info for ISBN " + thisEntry.getKey() + " in collection " + thisEntry.getValue());
+				array.put(bookObject);
 			}
 
 			listObject.put("book_list", array);

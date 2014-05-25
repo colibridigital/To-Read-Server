@@ -55,7 +55,7 @@ public class AddNewBooksResource extends AuthenticatableResource {
 		for(int i = 0; i < bookArray.length(); i++) {
 			JSONObject bookObj = bookArray.getJSONObject(i);
 			
-			Book newBook = saveBook(bookObj.getJSONObject("Book"), user);
+			Book newBook = saveBook(bookObj, user);
 			bookList.add(newBook);
 			user.addBook(bookObj.getString("collection"), newBook.getObjectId());
 		}

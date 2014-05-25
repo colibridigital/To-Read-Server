@@ -6,6 +6,7 @@ import org.restlet.routing.Router;
 
 import com.colibri.toread.api.AddNewBooksResource;
 import com.colibri.toread.api.ClientListResource;
+import com.colibri.toread.api.DeleteBookCollection;
 import com.colibri.toread.api.InitDeviceResource;
 import com.colibri.toread.api.LoginResource;
 import com.colibri.toread.api.NewUserResource;
@@ -30,6 +31,7 @@ public class ToReadApplication extends Application {
 		//we know nothing about
 		router.attach("/sync/clientlist", ClientListResource.class);
 		router.attach("/sync/addbooks", AddNewBooksResource.class);
+		router.attach("/sync/deletecollection", DeleteBookCollection.class);
 				
 		return router;
 	}

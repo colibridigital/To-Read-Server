@@ -203,6 +203,10 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 		}
 	}
 	
+	public boolean removeBookCollection(String collectionName) {
+		return myBooks.removeCollection(collectionName);
+	}
+	
 	public void setUserName(String userName){
 		this.userName = userName;
 	}
