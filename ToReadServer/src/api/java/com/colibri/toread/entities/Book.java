@@ -14,8 +14,7 @@ import com.colibri.toread.Jsonifiable;
 public class Book extends WrittenEntity implements Jsonifiable{
 	public Book() {
 	}
-	
-	
+		
 	public Book(JSONObject json) {
 		try {
 			this.setTitle(json.getString("title"));
@@ -30,8 +29,7 @@ public class Book extends WrittenEntity implements Jsonifiable{
 					JSONObject thisAuthor = authors.getJSONObject(i);
 				
 					Author newAuthor = new Author();
-					newAuthor.setFirstName(thisAuthor.getString("first_name"));
-					newAuthor.setLastName(thisAuthor.getString("last_name"));
+					newAuthor.setName(thisAuthor.getString("name"));
 
 					this.addAuthor(newAuthor);
 				}
@@ -57,6 +55,14 @@ public class Book extends WrittenEntity implements Jsonifiable{
 			json.put("title", getTitle());
 			json.put("ISBN", getISBN());
 			json.put("id", getObjectId());
+			json.put("cover_url", getcoverURL());
+			JSONArray authorsArr = new JSONArray();
+			
+			for(Author author : this.getAuthors()) {
+				authorsArr.put(author.toJson());
+			}
+			
+			json.put("authors", authorsArr);
 			
 		} catch (JSONException e) {
 			e.printStackTrace();

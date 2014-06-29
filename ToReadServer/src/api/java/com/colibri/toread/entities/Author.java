@@ -2,29 +2,40 @@ package com.colibri.toread.entities;
 
 import java.util.Date;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.colibri.toread.Jsonifiable;
 import com.colibri.toread.ToReadBaseEntity;
 
-public class Author extends ToReadBaseEntity {
-	private String firstName;
-	private String lastName;
+public class Author extends ToReadBaseEntity implements Jsonifiable{
+	private String name;
 	private Date birthDate;
 	
-	public String getFirstName() {
-		return firstName;
+	public String geName() {
+		return name;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setName(String firstName) {
+		this.name = firstName;
 	}
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+
 	public Date getBirthDate() {
 		return birthDate;
 	}
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
+	@Override
+	public JSONObject toJson() {
+		JSONObject json = new JSONObject();
+		try {
+			json.put("Name", name);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
+		return json;
+	}
+	
+	
 }

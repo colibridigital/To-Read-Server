@@ -7,6 +7,7 @@ import org.restlet.data.Parameter;
 import org.restlet.data.Protocol;
 import org.restlet.util.Series;
 
+import com.colibri.toread.external.TimesBestSeller;
 import com.colibri.toread.web.WebApplication;
 
 public class Bootstrap {

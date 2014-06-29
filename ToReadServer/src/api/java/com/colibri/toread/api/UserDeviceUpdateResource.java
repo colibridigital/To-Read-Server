@@ -25,9 +25,12 @@ public class UserDeviceUpdateResource extends AuthenticatableResource {
 	
 	@Post
 	public Representation acceptItem(Representation entity) throws JSONException, IOException {		
-		logger.info("Creating new user with random credentials");
+		logger.info("Updating user");
 
 		JSONObject json = new JsonRepresentation(entity).getJsonObject();
+		
+		//Log it
+		logRequest(json.toString());
 		
 		if(!authenticateRequest(json))
 			return getResponseRepresentation(false, "username or password invalid");

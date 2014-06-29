@@ -34,9 +34,9 @@ dependencies {
     apiCompile 'org.mongodb:mongo-java-driver:2.11.3'
     apiCompile 'com.google.code.morphia:morphia:0.102'
     apiCompile 'log4j:log4j:1.2.16'
+    apiCompile 'org.apache.commons:commons-lang3:3.0'
 
-    implCompile sourceSets.api.output
-    implCompile 'commons-lang:commons-lang:2.6'    
+    implCompile sourceSets.api.output  
 
     testCompile 'junit:junit:4.9'
     testCompile sourceSets.api.output
