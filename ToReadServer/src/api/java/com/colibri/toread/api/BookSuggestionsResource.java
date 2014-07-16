@@ -36,7 +36,7 @@ public class BookSuggestionsResource extends AuthenticatableResource {
 		logRequest(json.toString());
 		
 		if(!authenticateRequest(json))
-			return getResponseRepresentation(false, "username or password invalid");
+			return authenticationError();
 
 		BestSellerDAO dao = new BestSellerDAO();
 		BestSellers bestSellers = dao.findByListName("Combined Print and E-Book Fiction");

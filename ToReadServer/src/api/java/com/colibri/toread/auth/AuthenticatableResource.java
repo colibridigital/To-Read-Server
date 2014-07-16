@@ -39,7 +39,14 @@ public class AuthenticatableResource extends LoggableResource{
 		
 		UserDAO dao = new UserDAO();
 		User user = dao.findByUsername(username);
+		
+		if(user == null)
+			return false;
+		
 		Device device = user.findDevice(deviceId);
+		
+		if(device == null)
+			return false;
 		
 		return device.validateToken(token);
 	}
