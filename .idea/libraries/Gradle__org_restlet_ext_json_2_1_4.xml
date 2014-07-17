@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.restlet.ext.json-2.1.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.json/2.1.4/7c77c8bade734cf29efb26d283bfd132fd943c85/org.restlet.ext.json-2.1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.json/2.1.4/ec581ada32bc37f8b0aad3775685b9d96544a4e7/org.restlet.ext.json-2.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

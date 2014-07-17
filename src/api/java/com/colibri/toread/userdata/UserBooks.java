@@ -1,13 +1,12 @@
 package com.colibri.toread.userdata;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-
+import com.colibri.toread.ToReadBaseEntity;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 
-import com.colibri.toread.ToReadBaseEntity;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class UserBooks extends ToReadBaseEntity{
 	

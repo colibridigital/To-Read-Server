@@ -1,7 +1,9 @@
 package com.colibri.toread.api;
 
-import java.io.IOException;
-
+import com.colibri.toread.auth.AuthenticatableResource;
+import com.colibri.toread.entities.BestSellers;
+import com.colibri.toread.external.TimesBestSeller;
+import com.colibri.toread.persistence.BestSellerDAO;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,12 +12,7 @@ import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
 
-import com.colibri.toread.auth.AuthenticatableResource;
-import com.colibri.toread.auth.User;
-import com.colibri.toread.entities.BestSellers;
-import com.colibri.toread.external.TimesBestSeller;
-import com.colibri.toread.persistence.BestSellerDAO;
-import com.colibri.toread.persistence.UserDAO;
+import java.io.IOException;
 
 public class BookSuggestionsResource extends AuthenticatableResource {
 	

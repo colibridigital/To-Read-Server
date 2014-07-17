@@ -1,22 +1,23 @@
 package com.colibri.toread.entities;
 
-import java.util.ArrayList;
-import java.util.Date;
-
+import com.colibri.toread.Jsonifiable;
+import com.colibri.toread.ToReadBaseEntity;
+import com.colibri.toread.external.GoogleCoverURLResolver;
+import com.google.code.morphia.annotations.Indexed;
+import com.google.code.morphia.utils.IndexDirection;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.colibri.toread.Jsonifiable;
-import com.colibri.toread.ToReadBaseEntity;
-import com.google.code.morphia.annotations.Indexed;
-import com.google.code.morphia.utils.IndexDirection;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
 	private ArrayList<Book> bestSellers = new ArrayList<Book>();
 	private Date lastUpdated = new Date();
+    private final GoogleCoverURLResolver googleResolver = new GoogleCoverURLResolver();
 	
 	@Indexed(value=IndexDirection.ASC, name="sellerListIndex", unique=true)
 	private String listName;
@@ -53,10 +54,10 @@ public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
 				
 				//Book object which we will populate with data
 				Book thisBook = new Book();
-			
+			    String ISBN = getBookDetail(thisResult, "primary_isbn13");
 				thisBook.setTitle(getBookDetail(thisResult, "title"));
-				thisBook.setCoverURL(getBookDetail(thisResult, "book_image"));
-				thisBook.setISBN(getBookDetail(thisResult, "primary_isbn13"));
+				thisBook.setCoverURL(getCoverURL(getBookDetail(thisResult, "book_image"), ISBN));
+				thisBook.setISBN(ISBN);
 				Author thisAuthor = new Author();
 				thisAuthor.setName(getBookDetail(thisResult, "author"));
 				thisBook.addAuthor(thisAuthor);
@@ -72,7 +73,16 @@ public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
 		lastUpdated = new Date();
 		logger.info("Best sellers list updated with " + bestSellers.size() + " new books");
 	}
-	
+
+    private String getCoverURL(String bestSellResult, String ISBN) {
+        if(bestSellResult.equals("null")) {
+            logger.info("No cover URL returned by NYT, will try Google");
+            return googleResolver.getCoverURL(ISBN);
+        }
+
+        return bestSellResult;
+    }
+
 	private String getBookDetail(JSONObject result, String key) throws JSONException {
 		JSONArray detailsArr = result.getJSONArray("book_details");
 		//Get the first one

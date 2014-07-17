@@ -1,12 +1,11 @@
 package com.colibri.toread.auth;
 
+import com.colibri.toread.Jsonifiable;
+import com.colibri.toread.ToReadBaseEntity;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.colibri.toread.Jsonifiable;
-import com.colibri.toread.ToReadBaseEntity;
 
 public class Device extends ToReadBaseEntity implements Jsonifiable{
 	private String deviceOSId;

@@ -1,11 +1,11 @@
 package com.colibri.toread.entities;
 
-import java.util.ArrayList;
-import java.util.Date;
-
 import com.colibri.toread.ToReadBaseEntity;
 import com.google.code.morphia.annotations.Indexed;
 import com.google.code.morphia.utils.IndexDirection;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 public class WrittenEntity extends ToReadBaseEntity {
 	@Indexed (value=IndexDirection.ASC, name="bookNameIndex", unique=false)

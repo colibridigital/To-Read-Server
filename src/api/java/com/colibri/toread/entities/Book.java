@@ -1,15 +1,14 @@
 package com.colibri.toread.entities;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
+import com.colibri.toread.Jsonifiable;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.colibri.toread.Jsonifiable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class Book extends WrittenEntity implements Jsonifiable{
 	public Book() {

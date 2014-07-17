@@ -1,16 +1,9 @@
 package com.colibri.toread;
 
+import com.colibri.toread.api.*;
 import org.restlet.Application;
 import org.restlet.Restlet;
 import org.restlet.routing.Router;
-
-import com.colibri.toread.api.AddNewBooksResource;
-import com.colibri.toread.api.BookSuggestionsResource;
-import com.colibri.toread.api.ClientListResource;
-import com.colibri.toread.api.DeleteBookCollection;
-import com.colibri.toread.api.InitDeviceResource;
-import com.colibri.toread.api.LoginResource;
-import com.colibri.toread.api.NewUserResource;
 
 public class ToReadApplication extends Application {
 

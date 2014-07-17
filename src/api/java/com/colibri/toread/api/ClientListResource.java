@@ -1,11 +1,10 @@
 package com.colibri.toread.api;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-
+import com.colibri.toread.auth.AuthenticatableResource;
+import com.colibri.toread.auth.User;
+import com.colibri.toread.entities.Book;
+import com.colibri.toread.persistence.BookDAO;
+import com.colibri.toread.persistence.UserDAO;
 import org.apache.log4j.Logger;
 import org.bson.types.ObjectId;
 import org.json.JSONArray;
@@ -16,11 +15,11 @@ import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
 
-import com.colibri.toread.auth.AuthenticatableResource;
-import com.colibri.toread.auth.User;
-import com.colibri.toread.entities.Book;
-import com.colibri.toread.persistence.BookDAO;
-import com.colibri.toread.persistence.UserDAO;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class ClientListResource extends AuthenticatableResource {
 	

@@ -1,13 +1,12 @@
 package com.colibri.toread.userdata;
 
+import com.colibri.toread.ToReadBaseEntity;
+import org.bson.types.ObjectId;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-
-import org.bson.types.ObjectId;
-
-import com.colibri.toread.ToReadBaseEntity;
 
 public class BookCollection extends ToReadBaseEntity {
 	private HashMap<ObjectId, BookStatus> books = new HashMap<ObjectId, BookStatus>();

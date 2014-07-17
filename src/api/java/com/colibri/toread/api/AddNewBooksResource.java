@@ -1,8 +1,10 @@
 package com.colibri.toread.api;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
+import com.colibri.toread.auth.AuthenticatableResource;
+import com.colibri.toread.auth.User;
+import com.colibri.toread.entities.Book;
+import com.colibri.toread.persistence.BookDAO;
+import com.colibri.toread.persistence.UserDAO;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,11 +14,8 @@ import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
 
-import com.colibri.toread.auth.AuthenticatableResource;
-import com.colibri.toread.auth.User;
-import com.colibri.toread.entities.Book;
-import com.colibri.toread.persistence.BookDAO;
-import com.colibri.toread.persistence.UserDAO;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class AddNewBooksResource extends AuthenticatableResource {
 	
