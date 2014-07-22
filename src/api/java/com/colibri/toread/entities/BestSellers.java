@@ -14,8 +14,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
-	private ArrayList<Book> bestSellers = new ArrayList<Book>();
+	private ArrayList<BestSeller> bestSellers = new ArrayList<BestSeller>();
 	private Date lastUpdated = new Date();
     private final GoogleCoverURLResolver googleResolver = new GoogleCoverURLResolver();
 	
@@ -52,17 +53,17 @@ public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
 			for(int i= 0; i < resultJSON.length(); i++) {
 				JSONObject thisResult = resultJSON.getJSONObject(i);
 				
-				//Book object which we will populate with data
-				Book thisBook = new Book();
-			    String ISBN = getBookDetail(thisResult, "primary_isbn13");
-				thisBook.setTitle(getBookDetail(thisResult, "title"));
-				thisBook.setCoverURL(getCoverURL(getBookDetail(thisResult, "book_image"), ISBN));
-				thisBook.setISBN(ISBN);
+				//BestSeller object which we will populate with data
+				BestSeller thisBestSeller = new BestSeller();
+			    String ISBN = getBestSellerDetail(thisResult, "primary_isbn13");
+				thisBestSeller.setTitle(getBestSellerDetail(thisResult, "title"));
+				thisBestSeller.setCoverURL(getCoverURL(getBestSellerDetail(thisResult, "book_image"), ISBN));
+				thisBestSeller.setISBN(ISBN);
 				Author thisAuthor = new Author();
-				thisAuthor.setName(getBookDetail(thisResult, "author"));
-				thisBook.addAuthor(thisAuthor);
+				thisAuthor.setName(getBestSellerDetail(thisResult, "author"));
+				thisBestSeller.addAuthor(thisAuthor);
 				
-				bestSellers.add(thisBook);
+				bestSellers.add(thisBestSeller);
 			}
 			
 		} catch (JSONException e) {
@@ -83,7 +84,7 @@ public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
         return bestSellResult;
     }
 
-	private String getBookDetail(JSONObject result, String key) throws JSONException {
+	private String getBestSellerDetail(JSONObject result, String key) throws JSONException {
 		JSONArray detailsArr = result.getJSONArray("book_details");
 		//Get the first one
 		JSONObject details = detailsArr.getJSONObject(0);
@@ -97,7 +98,7 @@ public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
 			object.put("lastUpdated", lastUpdated.toString());
 			
 			JSONArray bookArray = new JSONArray();
-			for(Book book : bestSellers) {
+			for(BestSeller book : bestSellers) {
 				bookArray.put(book.toJson());
 			}
 			
