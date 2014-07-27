@@ -1,58 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a550f3a8-3a9c-4638-bcf4-589871789ac5" name="Default" comment="Add ability to check google for cover urls, cleaning imports">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSeller.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_classes_impl.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_resources_api.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_resources_impl.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__lombok_1_12_6.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/Bootstrap.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/Jsonifiable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/ReadProperties.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/AddNewBooksResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/InitDeviceResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/LoggableResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/auth/AuthenticatableResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/auth/Password.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/auth/Token.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/entities/Author.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/entities/Book.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/entities/TRLogger.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/entities/WrittenEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/external/TimesBestSeller.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/log/AccessLog.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/persistence/BookDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/persistence/MongoConnectionManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/persistence/UserDAO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/userdata/BookStatus.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/userdata/UserBooks.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/ToReadApplication.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/ToReadApplication.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/ToReadBaseEntity.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/ToReadBaseEntity.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/BookSuggestionsResource.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/api/BookSuggestionsResource.class" />
+    <list default="true" id="a550f3a8-3a9c-4638-bcf4-589871789ac5" name="Default" comment="Storing ISBN only for books">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/ToReadApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/ToReadBaseEntity.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/BookSuggestionsResource.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/DeleteBookCollection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/auth/Device.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/persistence/BestSellerDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/persistence/TRLoggerDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/userdata/BookCollection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/web/WebApplication.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/web/WebLoginResource.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/AddNewBooksResource.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/Book.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/persistence/BookDAO.java" afterPath="" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/ClientListResource.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/api/ClientListResource.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/DeleteBookCollection.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/api/DeleteBookCollection.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/GetBooksResource.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/api/GetBooksResource.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/LoginResource.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/api/LoginResource.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/NewUserResource.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/api/NewUserResource.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/UserDeviceUpdateResource.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/api/UserDeviceUpdateResource.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/auth/Device.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/auth/Device.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/auth/User.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/auth/User.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/entities/BestSellers.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/entities/BestSellers.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/external/GoogleCoverURLResolver.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/external/GoogleCoverURLResolver.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/persistence/BestSellerDAO.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/persistence/BestSellerDAO.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/persistence/TRLoggerDAO.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/persistence/TRLoggerDAO.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/userdata/BookCollection.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/userdata/BookCollection.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/web/WebApplication.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/web/WebApplication.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/web/WebLoginResource.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/web/WebLoginResource.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/web/WebResource.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/web/WebResource.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/log4j.properties" afterPath="$PROJECT_DIR$/build/classes/main/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSellers.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSellers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/Book.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/Book.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_classes_api.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_classes_api.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/WrittenEntity.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/WrittenEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toread-server.iml" afterPath="$PROJECT_DIR$/toread-server.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookCollection.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookCollection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ToRead.properties" afterPath="$PROJECT_DIR$/ToRead.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/ToReadApplication.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/ToReadApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="toread-server.iws" />
@@ -79,11 +58,12 @@
       <file leaf-file-name="ClientListResource.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3150">
-              <caret line="96" column="63" selection-start-line="96" selection-start-column="63" selection-end-line="96" selection-end-column="63" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1168" max-vertical-offset="2550">
+              <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
               <folding>
-                <element signature="e#2179#2195#0" expanded="true" />
-                <element signature="e#2309#2338#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2203#2219#0" expanded="true" />
+                <element signature="e#2344#2371#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,9 +72,17 @@
       <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3210">
-              <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-              <folding />
+            <state vertical-scroll-proportion="-14.769231" vertical-offset="1191" max-vertical-offset="2280">
+              <caret line="193" column="67" selection-start-line="193" selection-start-column="12" selection-end-line="193" selection-end-column="67" />
+              <folding>
+                <element signature="method#toJson#0;class#User#0" expanded="false" />
+                <element signature="method#setNewPassword#0;class#User#0" expanded="false" />
+                <element signature="method#validatePassword#0;class#User#0" expanded="false" />
+                <element signature="method#markAsDeleted#0;class#User#0" expanded="false" />
+                <element signature="e#4449#4450#0" expanded="true" />
+                <element signature="e#4496#4497#0" expanded="true" />
+                <element signature="method#findDevice#0;class#User#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,87 +90,15 @@
       <file leaf-file-name="UserBooks.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.21060842" vertical-offset="0" max-vertical-offset="1935">
-              <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookCollection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookCollection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Book.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/Book.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BestSeller.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSeller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.076923" vertical-offset="165" max-vertical-offset="1470">
-              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.5062696" vertical-offset="22" max-vertical-offset="705">
+              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#501#509#0" expanded="true" />
-                <element signature="e#2413#2414#0" expanded="true" />
-                <element signature="e#2453#2454#0" expanded="true" />
-                <element signature="e#2498#2499#0" expanded="true" />
-                <element signature="e#2533#2534#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BestSellers.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSellers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="567" max-vertical-offset="1770">
-              <caret line="56" column="60" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#637#649#0" expanded="true" />
-                <element signature="e#952#953#0" expanded="true" />
-                <element signature="e#983#984#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bootstrap.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/Bootstrap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WrittenEntity.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/WrittenEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding>
-                <element signature="e#624#625#0" expanded="true" />
-                <element signature="e#642#643#0" expanded="true" />
-                <element signature="e#683#684#0" expanded="true" />
-                <element signature="e#709#710#0" expanded="true" />
+                <element signature="method#addCollection#0;class#UserBooks#0" expanded="false" />
+                <element signature="method#removeCollection#0;class#UserBooks#0" expanded="false" />
+                <element signature="method#markAsDeleted#0;class#UserBooks#0" expanded="false" />
+                <element signature="method#addBook#0;class#UserBooks#0" expanded="false" />
+                <element signature="method#hasBook#0;class#UserBooks#0" expanded="false" />
+                <element signature="method#removeClientsDeletedBooks#0;class#UserBooks#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -207,6 +123,20 @@
     </option>
     <option name="recentTasks">
       <list>
+        <ExternalTaskExecutionInfo>
+          <option name="executorId" value="Run" />
+          <option name="settings">
+            <ExternalSystemSettings>
+              <option name="externalProjectPath" value="$PROJECT_DIR$" />
+              <option name="externalSystemIdString" value="GRADLE" />
+              <option name="taskNames">
+                <list>
+                  <option value="build" />
+                </list>
+              </option>
+            </ExternalSystemSettings>
+          </option>
+        </ExternalTaskExecutionInfo>
         <ExternalTaskExecutionInfo>
           <option name="executorId" value="Run" />
           <option name="settings">
@@ -500,7 +430,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ToRead.properties" />
         <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/external/GoogleCoverURLResolver.java" />
         <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/Bootstrap.java" />
         <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/WrittenEntity.java" />
@@ -508,6 +437,13 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSellers.java" />
         <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSeller.java" />
+        <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookCollection.java" />
+        <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/AddNewBooksResource.java" />
+        <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/ToReadApplication.java" />
+        <option value="$PROJECT_DIR$/ToRead.properties" />
+        <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java" />
+        <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java" />
+        <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java" />
       </list>
     </option>
   </component>
@@ -523,7 +459,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
@@ -542,8 +478,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -611,6 +545,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="toread" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toread-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toread-server" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toread" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="persistence" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -736,6 +700,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -755,7 +721,7 @@
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="LayoutCode.rearrangeEntriesJava" value="false" />
+    <property name="LayoutCode.rearrangeEntriesJava" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -804,6 +770,31 @@
       <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="toread-server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <RunnerSettings RunnerId="ExternalSystemTaskRunner" />
+      <ConfigurationWrapper RunnerId="ExternalSystemTaskRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <method />
+    </configuration>
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
       <module name="" />
       <setting name="path" value="" />
@@ -811,12 +802,6 @@
       <setting name="params" value="" />
       <setting name="workDir" value="file://$PROJECT_DIR$" />
       <setting name="debug" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -863,19 +848,6 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -901,6 +873,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -957,14 +942,16 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Bootstrap" />
       <item index="1" class="java.lang.String" itemvalue="Gradle.toread-server [clean]" />
+      <item index="2" class="java.lang.String" itemvalue="Gradle.toread-server [build]" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Application.Bootstrap" />
-        <item index="1" class="java.lang.String" itemvalue="Gradle.toread-server [clean]" />
+        <item index="1" class="java.lang.String" itemvalue="Gradle.toread-server [build]" />
+        <item index="2" class="java.lang.String" itemvalue="Gradle.toread-server [clean]" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -986,7 +973,11 @@
       <created>1405630827771</created>
       <updated>1405630827771</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Storing ISBN only for books">
+      <created>1406062263977</created>
+      <updated>1406062263977</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1004,19 +995,19 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16361417" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16300367" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21428572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23956044" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21367522" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26813188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1036,7 +1027,8 @@
     </option>
     <MESSAGE value="Add ability to check google for cover urls" />
     <MESSAGE value="Add ability to check google for cover urls, cleaning imports" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ability to check google for cover urls, cleaning imports" />
+    <MESSAGE value="Storing ISBN only for books" />
+    <option name="LAST_COMMIT_MESSAGE" value="Storing ISBN only for books" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1048,8 +1040,20 @@
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java</url>
+          <line>104</line>
+          <properties class="com.colibri.toread.auth.User" method="toJson" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1059,11 +1063,95 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3465">
+          <caret line="96" column="63" selection-start-line="96" selection-start-column="63" selection-end-line="96" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2203#2219#0" expanded="true" />
+            <element signature="e#2344#2371#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="4005">
+          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+          <folding>
+            <element signature="method#toJson#0;class#User#0" expanded="false" />
+            <element signature="method#setNewPassword#0;class#User#0" expanded="false" />
+            <element signature="method#validatePassword#0;class#User#0" expanded="false" />
+            <element signature="method#markAsDeleted#0;class#User#0" expanded="false" />
+            <element signature="e#4449#4450#0" expanded="true" />
+            <element signature="e#4496#4497#0" expanded="true" />
+            <element signature="method#findDevice#0;class#User#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1935">
+          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+          <folding>
+            <element signature="method#addCollection#0;class#UserBooks#0" expanded="false" />
+            <element signature="method#removeCollection#0;class#UserBooks#0" expanded="false" />
+            <element signature="method#markAsDeleted#0;class#UserBooks#0" expanded="false" />
+            <element signature="method#addBook#0;class#UserBooks#0" expanded="false" />
+            <element signature="method#hasBook#0;class#UserBooks#0" expanded="false" />
+            <element signature="method#removeClientsDeletedBooks#0;class#UserBooks#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="675">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSeller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1470">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSellers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="567" max-vertical-offset="1770">
+          <caret line="56" column="60" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/Bootstrap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="840">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/WrittenEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="525">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3150">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2179#2195#0" expanded="true" />
-            <element signature="e#2309#2338#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2203#2219#0" expanded="true" />
+            <element signature="e#2344#2371#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1073,8 +1161,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3150">
           <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
-            <element signature="e#2179#2195#0" expanded="true" />
-            <element signature="e#2309#2338#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2203#2219#0" expanded="true" />
+            <element signature="e#2344#2371#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1103,13 +1192,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ToRead.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28301886" vertical-offset="0" max-vertical-offset="1272">
-          <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/external/GoogleCoverURLResolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34198114" vertical-offset="0" max-vertical-offset="1272">
@@ -1128,48 +1210,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.54285717" vertical-offset="209" max-vertical-offset="1200">
           <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/WrittenEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#624#625#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.60993975" vertical-offset="0" max-vertical-offset="664">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSeller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.076923" vertical-offset="165" max-vertical-offset="1470">
+        <state vertical-scroll-proportion="0.31626505" vertical-offset="165" max-vertical-offset="1470">
           <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#501#509#0" expanded="true" />
-            <element signature="e#2413#2414#0" expanded="true" />
-            <element signature="e#2453#2454#0" expanded="true" />
-            <element signature="e#2498#2499#0" expanded="true" />
-            <element signature="e#2533#2534#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/BestSellers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="567" max-vertical-offset="1770">
+        <state vertical-scroll-proportion="0.41114458" vertical-offset="567" max-vertical-offset="1770">
           <caret line="56" column="60" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#637#649#0" expanded="true" />
-            <element signature="e#952#953#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,35 +1241,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/entities/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java">
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookStatus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3150">
-          <caret line="96" column="63" selection-start-line="96" selection-start-column="63" selection-end-line="96" selection-end-column="63" />
-          <folding>
-            <element signature="e#2179#2195#0" expanded="true" />
-            <element signature="e#2309#2338#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3210">
-          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1214,15 +1257,68 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="e#330#350#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/ToReadApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ToRead.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
+          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1168" max-vertical-offset="2550">
+          <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2203#2219#0" expanded="true" />
+            <element signature="e#2344#2371#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.769231" vertical-offset="1191" max-vertical-offset="2280">
+          <caret line="193" column="67" selection-start-line="193" selection-start-column="12" selection-end-line="193" selection-end-column="67" />
+          <folding>
+            <element signature="method#toJson#0;class#User#0" expanded="false" />
+            <element signature="method#setNewPassword#0;class#User#0" expanded="false" />
+            <element signature="method#validatePassword#0;class#User#0" expanded="false" />
+            <element signature="method#markAsDeleted#0;class#User#0" expanded="false" />
+            <element signature="e#4449#4450#0" expanded="true" />
+            <element signature="e#4496#4497#0" expanded="true" />
+            <element signature="method#findDevice#0;class#User#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21060842" vertical-offset="0" max-vertical-offset="1935">
-          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
-          <folding />
+        <state vertical-scroll-proportion="0.5062696" vertical-offset="22" max-vertical-offset="705">
+          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding>
+            <element signature="method#addCollection#0;class#UserBooks#0" expanded="false" />
+            <element signature="method#removeCollection#0;class#UserBooks#0" expanded="false" />
+            <element signature="method#markAsDeleted#0;class#UserBooks#0" expanded="false" />
+            <element signature="method#addBook#0;class#UserBooks#0" expanded="false" />
+            <element signature="method#hasBook#0;class#UserBooks#0" expanded="false" />
+            <element signature="method#removeClientsDeletedBooks#0;class#UserBooks#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
