@@ -1,9 +1,8 @@
 package com.colibri.toread.api;
 
+import com.colibri.toread.auth.AuthenticatableResource;
 import org.restlet.representation.Representation;
 import org.restlet.resource.Post;
-
-import com.colibri.toread.auth.AuthenticatableResource;
 
 public class GetBooksResource extends AuthenticatableResource{
 

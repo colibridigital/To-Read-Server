@@ -1,12 +1,12 @@
 package com.colibri.toread.persistence;
 
-import java.net.UnknownHostException;
-
 import com.colibri.toread.ReadProperties;
 import com.google.code.morphia.Datastore;
 import com.google.code.morphia.Morphia;
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
+
+import java.net.UnknownHostException;
 
 public final class MongoConnectionManager {
 	public static final MongoConnectionManager INSTANCE = new MongoConnectionManager();

@@ -1,13 +1,9 @@
 package com.colibri.toread.entities;
 
-import java.io.IOException;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.restlet.ext.json.JsonRepresentation;
-import org.restlet.representation.Representation;
-
 import com.colibri.toread.ToReadBaseEntity;
+import org.json.JSONException;
+
+import java.io.IOException;
 
 public class TRLogger extends ToReadBaseEntity{
 	private String log;

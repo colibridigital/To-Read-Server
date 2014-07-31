@@ -1,20 +1,15 @@
 package com.colibri.toread.external;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.net.URL;
-import java.nio.charset.Charset;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
+import com.colibri.toread.ReadProperties;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.colibri.toread.ReadProperties;
+import java.io.*;
+import java.net.URL;
+import java.nio.charset.Charset;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 //Connects to the times best seller API and downloads the best seller list for today
 public class TimesBestSeller {

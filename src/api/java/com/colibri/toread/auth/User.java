@@ -1,22 +1,5 @@
 package com.colibri.toread.auth;
 
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
-
-import org.apache.log4j.Logger;
-import org.bson.types.ObjectId;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import com.colibri.toread.Jsonifiable;
 import com.colibri.toread.ToReadBaseEntity;
 import com.colibri.toread.userdata.UserBooks;
@@ -24,6 +7,17 @@ import com.google.code.morphia.annotations.Embedded;
 import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Indexed;
 import com.google.code.morphia.utils.IndexDirection;
+import org.apache.log4j.Logger;
+import org.bson.types.ObjectId;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Entity
 public class User extends ToReadBaseEntity implements Jsonifiable{
@@ -167,16 +161,16 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 		return false;
 	}
 	
-	public void markAsDeleted(String collectionName, ObjectId bookId) {
-		logger.info("Deleting " + bookId + " from collection " + collectionName);
+	public void markAsDeleted(String collectionName, String ISBN) {
+		logger.info("Deleting " + ISBN + " from collection " + collectionName);
 		
-		if(!myBooks.markAsDeleted(collectionName, bookId))
+		if(!myBooks.markAsDeleted(collectionName, ISBN))
 			logger.info("User didn't have the book in the first place, so won't do anything");
 		
-		logger.info("Book Id " + bookId.toString() + " was marked for deletion");
+		logger.info("Book Id " + ISBN + " was marked for deletion");
 	}
 	
-	public void addBook(String collectionName, ObjectId newBook) {
+	public void addBook(String collectionName, String newBook) {
 		myBooks.addBook(collectionName, newBook);
 	}
 
@@ -194,13 +188,16 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 		return null;
 	}
 	
-	public void processClientBooks(HashMap<String, ArrayList<ObjectId>> clientsBooks) {
+	public void removeDeletedBooks(HashMap<String, ArrayList<String>> clientsBooks) {
 		//Loop over each collection one by one
-		for(Iterator<Map.Entry<String, ArrayList<ObjectId>>> it = clientsBooks.entrySet().iterator(); it.hasNext(); ) {
-			Map.Entry<String, ArrayList<ObjectId>> entry = it.next();
-			
-			myBooks.removeClientsDeletedBooks(entry.getKey(), entry.getValue());
+		for(Iterator<Map.Entry<String, ArrayList<String>>> it = clientsBooks.entrySet().iterator(); it.hasNext(); ) {
+			Map.Entry<String, ArrayList<String>> entry = it.next();
+
+            String collectionName = entry.getKey();
+            myBooks.removeClientsDeletedBooks(collectionName, entry.getValue());
 		}
+
+        myBooks.removeDeletedCollections(clientsBooks.keySet());
 	}
 	
 	public boolean removeBookCollection(String collectionName) {
@@ -255,8 +252,8 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 		this.dob = dob;
 	}
 	
-	public boolean hasBook(String collectionName, ObjectId bookId) {
-		return myBooks.hasBook(collectionName, bookId);
+	public boolean hasBook(String collectionName, String ISBN) {
+		return myBooks.hasBook(collectionName, ISBN);
 	}
 
 	public String getUserName() {

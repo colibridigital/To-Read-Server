@@ -1,7 +1,8 @@
 package com.colibri.toread.api;
 
-import java.io.IOException;
-
+import com.colibri.toread.auth.Device;
+import com.colibri.toread.auth.User;
+import com.colibri.toread.persistence.UserDAO;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.restlet.data.Form;
@@ -10,9 +11,7 @@ import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
 
-import com.colibri.toread.auth.Device;
-import com.colibri.toread.auth.User;
-import com.colibri.toread.persistence.UserDAO;
+import java.io.IOException;
 
 public class LoginResource extends LoggableResource {
 

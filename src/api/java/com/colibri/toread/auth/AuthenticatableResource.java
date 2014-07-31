@@ -1,12 +1,11 @@
 package com.colibri.toread.auth;
 
+import com.colibri.toread.api.LoggableResource;
+import com.colibri.toread.persistence.UserDAO;
 import org.apache.log4j.Logger;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.restlet.ext.json.JsonRepresentation;
-
-import com.colibri.toread.api.LoggableResource;
-import com.colibri.toread.persistence.UserDAO;
 
 public class AuthenticatableResource extends LoggableResource{
 	Logger logger = Logger.getLogger(AuthenticatableResource.class);

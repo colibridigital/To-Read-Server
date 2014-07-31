@@ -1,8 +1,7 @@
 package com.colibri.toread;
 
-import org.bson.types.ObjectId;
-
 import com.google.code.morphia.annotations.Id;
+import org.bson.types.ObjectId;
 
 public abstract class ToReadBaseEntity {
 	@Id private ObjectId id;

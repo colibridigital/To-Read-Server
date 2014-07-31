@@ -1,9 +1,4 @@
 package com.colibri.toread.web;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
 
 import org.restlet.data.MediaType;
 import org.restlet.representation.Representation;
@@ -11,6 +6,8 @@ import org.restlet.representation.StringRepresentation;
 import org.restlet.resource.Get;
 import org.restlet.resource.Post;
 import org.restlet.resource.ServerResource;
+
+import java.io.*;
 //import org.apache.log4j.Logger;
 
 public class WebLoginResource extends ServerResource {

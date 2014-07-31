@@ -1,12 +1,11 @@
 package com.colibri.toread.entities;
 
-import java.util.Date;
-
+import com.colibri.toread.Jsonifiable;
+import com.colibri.toread.ToReadBaseEntity;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.colibri.toread.Jsonifiable;
-import com.colibri.toread.ToReadBaseEntity;
+import java.util.Date;
 
 public class Author extends ToReadBaseEntity implements Jsonifiable{
 	private String name;

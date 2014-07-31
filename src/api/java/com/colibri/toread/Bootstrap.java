@@ -1,14 +1,12 @@
 package com.colibri.toread;
 
+import com.colibri.toread.web.WebApplication;
 import org.apache.log4j.Logger;
 import org.restlet.Component;
 import org.restlet.Server;
 import org.restlet.data.Parameter;
 import org.restlet.data.Protocol;
 import org.restlet.util.Series;
-
-import com.colibri.toread.external.TimesBestSeller;
-import com.colibri.toread.web.WebApplication;
 
 public class Bootstrap {
 	static Logger logger = Logger.getLogger(Bootstrap.class);

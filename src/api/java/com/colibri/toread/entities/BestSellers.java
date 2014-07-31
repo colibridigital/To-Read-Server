@@ -1,22 +1,24 @@
 package com.colibri.toread.entities;
 
-import java.util.ArrayList;
-import java.util.Date;
-
+import com.colibri.toread.Jsonifiable;
+import com.colibri.toread.ToReadBaseEntity;
+import com.colibri.toread.external.GoogleCoverURLResolver;
+import com.google.code.morphia.annotations.Indexed;
+import com.google.code.morphia.utils.IndexDirection;
 import org.apache.commons.lang3.time.DateUtils;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.colibri.toread.Jsonifiable;
-import com.colibri.toread.ToReadBaseEntity;
-import com.google.code.morphia.annotations.Indexed;
-import com.google.code.morphia.utils.IndexDirection;
+import java.util.ArrayList;
+import java.util.Date;
+
 
 public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
-	private ArrayList<Book> bestSellers = new ArrayList<Book>();
+	private ArrayList<BestSeller> bestSellers = new ArrayList<BestSeller>();
 	private Date lastUpdated = new Date();
+    private final GoogleCoverURLResolver googleResolver = new GoogleCoverURLResolver();
 	
 	@Indexed(value=IndexDirection.ASC, name="sellerListIndex", unique=true)
 	private String listName;
@@ -51,17 +53,17 @@ public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
 			for(int i= 0; i < resultJSON.length(); i++) {
 				JSONObject thisResult = resultJSON.getJSONObject(i);
 				
-				//Book object which we will populate with data
-				Book thisBook = new Book();
-			
-				thisBook.setTitle(getBookDetail(thisResult, "title"));
-				thisBook.setCoverURL(getBookDetail(thisResult, "book_image"));
-				thisBook.setISBN(getBookDetail(thisResult, "primary_isbn13"));
+				//BestSeller object which we will populate with data
+				BestSeller thisBestSeller = new BestSeller();
+			    String ISBN = getBestSellerDetail(thisResult, "primary_isbn13");
+				thisBestSeller.setTitle(getBestSellerDetail(thisResult, "title"));
+				thisBestSeller.setCoverURL(getCoverURL(getBestSellerDetail(thisResult, "book_image"), ISBN));
+				thisBestSeller.setISBN(ISBN);
 				Author thisAuthor = new Author();
-				thisAuthor.setName(getBookDetail(thisResult, "author"));
-				thisBook.addAuthor(thisAuthor);
+				thisAuthor.setName(getBestSellerDetail(thisResult, "author"));
+				thisBestSeller.addAuthor(thisAuthor);
 				
-				bestSellers.add(thisBook);
+				bestSellers.add(thisBestSeller);
 			}
 			
 		} catch (JSONException e) {
@@ -72,8 +74,17 @@ public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
 		lastUpdated = new Date();
 		logger.info("Best sellers list updated with " + bestSellers.size() + " new books");
 	}
-	
-	private String getBookDetail(JSONObject result, String key) throws JSONException {
+
+    private String getCoverURL(String bestSellResult, String ISBN) {
+        if(bestSellResult.equals("null")) {
+            logger.info("No cover URL returned by NYT, will try Google");
+            return googleResolver.getCoverURL(ISBN);
+        }
+
+        return bestSellResult;
+    }
+
+	private String getBestSellerDetail(JSONObject result, String key) throws JSONException {
 		JSONArray detailsArr = result.getJSONArray("book_details");
 		//Get the first one
 		JSONObject details = detailsArr.getJSONObject(0);
@@ -87,7 +98,7 @@ public class BestSellers extends ToReadBaseEntity implements Jsonifiable{
 			object.put("lastUpdated", lastUpdated.toString());
 			
 			JSONArray bookArray = new JSONArray();
-			for(Book book : bestSellers) {
+			for(BestSeller book : bestSellers) {
 				bookArray.put(book.toJson());
 			}
 			
