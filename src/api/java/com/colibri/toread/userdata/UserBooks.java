@@ -1,11 +1,15 @@
 package com.colibri.toread.userdata;
 
+import com.colibri.toread.Jsonifiable;
 import com.colibri.toread.ToReadBaseEntity;
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.*;
 
-public class UserBooks extends ToReadBaseEntity{
+public class UserBooks extends ToReadBaseEntity implements Jsonifiable{
 
     //Hashmap of collecton name to book collection. The book collection class has another hashmap
     //of Book (ObjectId) to Book status
@@ -141,5 +145,37 @@ public class UserBooks extends ToReadBaseEntity{
             }
 
         }
+    }
+
+    @Override
+    public JSONObject toJson() {
+        try {
+            JSONObject jsonObject = new JSONObject();
+            JSONArray collections = new JSONArray();
+
+            for(Iterator<Map.Entry<String, BookCollection>> it = this.collections.entrySet().iterator(); it.hasNext(); ) {
+                JSONObject collection = new JSONObject();
+                JSONArray books = new JSONArray();
+                Map.Entry<String, BookCollection> entry = it.next();
+                String collectionName = entry.getKey();
+                ArrayList<String> allBooks = entry.getValue().getAllBooks();
+
+                for (String book : allBooks) {
+                    books.put(book);
+                }
+
+                collection.put("collection_name", collectionName);
+                collection.put("books", books);
+
+                collections.put(collection);
+            }
+
+            jsonObject.put("collections", collections);
+            return jsonObject;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

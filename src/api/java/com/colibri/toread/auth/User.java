@@ -31,6 +31,10 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 	private String firstName;
 	private String lastName;
 	private Date dob;
+    //1: 0 - 25, 2: 25 - 40, 3: 40 - 65, 4: 65+;
+    private int ageRange;
+    private String occupation;
+    private String sex;
 	
 	@Embedded
 	private UserBooks myBooks = new UserBooks();
@@ -54,24 +58,42 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 				this.setFirstName(json.getString("first_name"));
 			}
 			else {
-				logger.error("First name field not found in user info JSON");
-				return false;
+				logger.info("First name field not found in user info JSON");
 			}
+
+            if(json.has("age_range") ) {
+                this.ageRange = json.getInt("age_range");
+            }
+            else {
+                logger.info("Age range field not found in user info JSON");
+            }
+
+            if(json.has("sex") ) {
+                this.sex = json.getString("sex");
+            }
+            else {
+                logger.info("Sex field not found in user info JSON");
+            }
+
+            if(json.has("occupation") ) {
+                this.occupation = json.getString("occupation");
+            }
+            else {
+                logger.info("Occupation field not found in user info JSON");
+            }
 			
 			if(json.has("last_name") ) {
 				this.setLastName(json.getString("last_name"));
 			}
 			else {
-				logger.error("Last name field not found in user info JSON");
-				return false;
+				logger.info("Last name field not found in user info JSON");
 			}
 			
 			if(json.has("email_address") ) {
 				this.setEmailAddress(json.getString("email_address"));
 			}
 			else {
-				logger.error("Email address field not found in user info JSON");
-				return false;
+				logger.info("Email address field not found in user info JSON");
 			}
 			
 			if(json.has("password") ) {
@@ -119,6 +141,15 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 			
 			if(dob != null)
 				json.put("dob", dob);
+
+            if(ageRange != 0)
+                json.put("age_range", ageRange);
+
+            if(sex != null)
+                json.put("sex", sex);
+
+            if(occupation != null)
+                json.put("occupation", occupation);
 			
 			JSONArray jsonArray = new JSONArray();
 			for(Device device : devices) {
@@ -259,6 +290,9 @@ public class User extends ToReadBaseEntity implements Jsonifiable{
 	public String getUserName() {
 		return userName;
 	}
-	
+
+    public JSONObject getBooksJSON() {
+        return myBooks.toJson();
+    }
 }
 	

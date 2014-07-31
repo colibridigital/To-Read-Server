@@ -24,7 +24,7 @@ public class ToReadApplication extends Application {
 		//Take a client list of books and cross reference them against the database.  Delete books not present and return the elements
 		//we know nothing about
 		router.attach("/sync/clientlist", ClientListResource.class);
-		router.attach("/sync/deletecollection", DeleteBookCollection.class);
+        router.attach("/sync/getall", GetBooksResource.class);
 		router.attach("/suggest/bestsell", BookSuggestionsResource.class);
 				
 		return router;
