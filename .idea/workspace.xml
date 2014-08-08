@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a550f3a8-3a9c-4638-bcf4-589871789ac5" name="Default" comment="Storing ISBN only for books">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/ClientListResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/GetBooksResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/NewUserResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/UserDeviceUpdateResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/auth/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/web/WebResource.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/DeleteBookCollection.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/api/LoginResource.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/api/LoginResource.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/entities/BestSellers.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/entities/BestSellers.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/com/colibri/toread/external/GoogleCoverURLResolver.class" afterPath="$PROJECT_DIR$/build/classes/main/com/colibri/toread/external/GoogleCoverURLResolver.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/classes/production/toread-server/log4j.properties" afterPath="$PROJECT_DIR$/build/classes/main/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/GetBooksResource.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/GetBooksResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/ToReadApplication.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/ToReadApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_classes_api.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_classes_api.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_classes_impl.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_classes_impl.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_resources_api.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_resources_api.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_resources_impl.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle___Users_James_Developer_toread_server_build_resources_impl.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/LoginResource.java" afterPath="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/LoginResource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toread-server.iml" afterPath="$PROJECT_DIR$/toread-server.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="toread-server.iws" />
@@ -40,81 +34,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ClientListResource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java">
+      <file leaf-file-name="LoginResource.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/LoginResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="2310">
-              <caret line="47" column="48" selection-start-line="44" selection-start-column="7" selection-end-line="47" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="742" max-vertical-offset="1380">
-              <caret line="294" column="32" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.53571427" vertical-offset="405" max-vertical-offset="1485">
+              <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
-                <element signature="method#userFromJSON#0;class#User#0" expanded="false" />
-                <element signature="method#toJson#0;class#User#0" expanded="false" />
-                <element signature="method#setNewPassword#0;class#User#0" expanded="false" />
-                <element signature="method#validatePassword#0;class#User#0" expanded="false" />
-                <element signature="method#markAsDeleted#0;class#User#0" expanded="false" />
-                <element signature="method#findDevice#0;class#User#0" expanded="false" />
-                <element signature="method#removeDeletedBooks#0;class#User#0" expanded="false" />
-                <element signature="e#7371#7372#0" expanded="true" />
-                <element signature="e#7410#7411#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#504#505#0" expanded="true" />
+                <element signature="e#541#542#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserBooks.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java">
+      <file leaf-file-name="NewUserResource.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/NewUserResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="990">
-              <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-              <folding>
-                <element signature="method#addCollection#0;class#UserBooks#0" expanded="false" />
-                <element signature="method#removeCollection#0;class#UserBooks#0" expanded="false" />
-                <element signature="method#markAsDeleted#0;class#UserBooks#0" expanded="false" />
-                <element signature="method#addBook#0;class#UserBooks#0" expanded="false" />
-                <element signature="method#hasBook#0;class#UserBooks#0" expanded="false" />
-                <element signature="method#removeClientsDeletedBooks#0;class#UserBooks#0" expanded="false" />
-                <element signature="method#removeDeletedCollections#0;class#UserBooks#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ToReadApplication.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/ToReadApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookCollection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookCollection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="e#298#318#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetBooksResource.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/GetBooksResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.25773194" vertical-offset="0" max-vertical-offset="582">
-              <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+              <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="35" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -369,7 +307,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1406060675000" />
+        <entry key="$PROJECT_DIR$" value="1407509852000" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -382,6 +320,31 @@
                   <entry key="$PROJECT_DIR$">
                     <value>
                       <ExternalModuleBuildClasspathPojo>
+                        <option name="entries">
+                          <list>
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.5/1100638866461d41fbed0e89d722b161c579fe23/commons-codec-1.5-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.5/cf993e250ff71804754ec2734a16f23c0be99f70/commons-codec-1.5.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet/2.1.4/b60b51713d06750e8fc145963ea7cac97c81f7ec/org.restlet-2.1.4-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet/2.1.4/e373c8ef862f4e253425593ac0c27fc1ca7cdfca/org.restlet-2.1.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.json/2.1.4/ec581ada32bc37f8b0aad3775685b9d96544a4e7/org.restlet.ext.json-2.1.4-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.json/2.1.4/7c77c8bade734cf29efb26d283bfd132fd943c85/org.restlet.ext.json-2.1.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.ssl/2.1.4/c42b652df33c6debe834d2f87232555a6ae106a9/org.restlet.ext.ssl-2.1.4-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.ssl/2.1.4/f5ed33bad3fb6953bb9c3425ea5a1c72666dbb31/org.restlet.ext.ssl-2.1.4.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.11.3/cad48bd302cbd58a9b3ddb46627483f49ce69716/mongo-java-driver-2.11.3-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.11.3/8a6dd3000edcc9eb18c51ebb01a42186411ccc08/mongo-java-driver-2.11.3.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.morphia/morphia/0.102/ef0791fb44def1471df0c7f5532bee1191fb564b/morphia-0.102-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.morphia/morphia/0.102/b563e8a9a894e809063820c4255008a158036d0a/morphia-0.102.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/bf945d1dc995be7fe64923625f842fbb6bf443be/log4j-1.2.16-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/7999a63bfccbc7c247a9aea10d83d4272bd492c6/log4j-1.2.16.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.0/d48f964b56a931ec2712ce5d411a40d114a69753/commons-lang3-3.0-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.0/8873bd0bb5cb9ee37f1b04578eb7e26fcdd44cb0/commons-lang3-3.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.12.6/f3bc33d364a97c3fc2b8d6557f03e594c898a927/lombok-1.12.6-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.12.6/f5df0f60aa42762a86e31e29892da07c5aaa0c71/lombok-1.12.6.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.lib.org.json/2.0/aa0e3bef5e0c3660a3e69529a3d8b71b4ecd291a/org.restlet.lib.org.json-2.0.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jsslutils/jsslutils/1.0.5/84599cc4ebac9ca0aca49d22cf8364c74c905459/jsslutils-1.0.5-sources.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jsslutils/jsslutils/1.0.5/ddcf2646f6ecc5692c421cbfff5bd591e6c50327/jsslutils-1.0.5.jar" />
+                          </list>
+                        </option>
                         <option name="path" value="$PROJECT_DIR$" />
                       </ExternalModuleBuildClasspathPojo>
                     </value>
@@ -391,48 +354,6 @@
               <option name="name" value="toread-server" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/ant-1.9.2.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/ant-launcher-1.9.2.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-base-services-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-base-services-groovy-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-cli-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-core-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-docs-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-launcher-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-messaging-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-native-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-open-api-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-resources-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-tooling-api-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-ui-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/gradle-wrapper-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/groovy-all-1.8.6.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/ivy-2.2.0.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/ant-antlr-1.9.2.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-announce-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-antlr-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-build-comparison-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-build-init-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-code-quality-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-core-impl-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-cpp-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-diagnostics-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-ear-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-ide-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-ivy-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-jacoco-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-javascript-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-jetty-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-language-base-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-language-jvm-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-maven-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-osgi-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-plugins-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-publish-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-reporting-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-scala-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-signing-1.11.jar" />
-                  <option value="/usr/local/Cellar/gradle/1.11/libexec/lib/plugins/gradle-sonar-1.11.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -461,13 +382,14 @@
         <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/ToReadApplication.java" />
         <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java" />
         <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/GetBooksResource.java" />
+        <option value="$PROJECT_DIR$/src/api/java/com/colibri/toread/api/LoginResource.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1680" />
-    <option name="height" value="1028" />
+    <option name="width" value="2560" />
+    <option name="height" value="1418" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -480,7 +402,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+    <option name="STATE" value="2" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -728,19 +650,11 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.29789722" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="recentsLimit" value="5" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="dynamic.classpath" value="false" />
-    <property name="FullScreen" value="false" />
-    <property name="LayoutCode.rearrangeEntriesJava" value="true" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="OverrideImplement.overriding.sorted" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -823,27 +737,6 @@
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
-      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -852,19 +745,17 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -907,20 +798,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -941,6 +818,69 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -959,6 +899,19 @@
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
       <method />
     </configuration>
     <list size="3">
@@ -1004,11 +957,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1680" height="1028" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="22" width="2560" height="1418" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1017,20 +970,21 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16239317" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16163622" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21306472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26813188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21247022" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2676923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1080,6 +1034,102 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="2580">
+          <caret line="47" column="48" selection-start-line="44" selection-start-column="7" selection-end-line="47" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4410" max-vertical-offset="4560">
+          <caret line="294" column="32" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2535" max-vertical-offset="2805">
+          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/ToReadApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="570">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="495">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/GetBooksResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="675">
+          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="705" max-vertical-offset="2580">
+          <caret line="47" column="48" selection-start-line="44" selection-start-column="7" selection-end-line="47" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4410" max-vertical-offset="4560">
+          <caret line="294" column="32" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/UserBooks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2535" max-vertical-offset="2805">
+          <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/ToReadApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="570">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="660">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/GetBooksResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="525">
+          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2580">
           <caret line="93" column="28" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
           <folding />
@@ -1090,17 +1140,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2895" max-vertical-offset="4050">
           <caret line="193" column="67" selection-start-line="193" selection-start-column="12" selection-end-line="193" selection-end-column="67" />
-          <folding>
-            <element signature="method#userFromJSON#0;class#User#0" expanded="false" />
-            <element signature="method#toJson#0;class#User#0" expanded="false" />
-            <element signature="method#setNewPassword#0;class#User#0" expanded="false" />
-            <element signature="method#validatePassword#0;class#User#0" expanded="false" />
-            <element signature="method#markAsDeleted#0;class#User#0" expanded="false" />
-            <element signature="method#findDevice#0;class#User#0" expanded="false" />
-            <element signature="method#removeDeletedBooks#0;class#User#0" expanded="false" />
-            <element signature="e#7371#7372#0" expanded="true" />
-            <element signature="e#7410#7411#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,14 +1148,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="705">
           <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding>
-            <element signature="method#addCollection#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#removeCollection#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#markAsDeleted#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#addBook#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#hasBook#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#removeClientsDeletedBooks#0;class#UserBooks#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1131,17 +1164,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="4005">
           <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-          <folding>
-            <element signature="method#userFromJSON#0;class#User#0" expanded="false" />
-            <element signature="method#toJson#0;class#User#0" expanded="false" />
-            <element signature="method#setNewPassword#0;class#User#0" expanded="false" />
-            <element signature="method#validatePassword#0;class#User#0" expanded="false" />
-            <element signature="method#markAsDeleted#0;class#User#0" expanded="false" />
-            <element signature="method#findDevice#0;class#User#0" expanded="false" />
-            <element signature="method#removeDeletedBooks#0;class#User#0" expanded="false" />
-            <element signature="e#7371#7372#0" expanded="true" />
-            <element signature="e#7410#7411#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,14 +1172,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="1935">
           <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
-          <folding>
-            <element signature="method#addCollection#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#removeCollection#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#markAsDeleted#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#addBook#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#hasBook#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#removeClientsDeletedBooks#0;class#UserBooks#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1164,9 +1180,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="675">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#298#318#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1189,7 +1203,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="840">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1287,7 +1300,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
           <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1313,19 +1325,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/NewUserResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11755486" vertical-offset="180" max-vertical-offset="1305">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/auth/AuthenticatableResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07317073" vertical-offset="270" max-vertical-offset="990">
           <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1337,29 +1340,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/LoginResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.47021943" vertical-offset="360" max-vertical-offset="1230">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/ClientListResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="2310">
           <caret line="47" column="48" selection-start-line="44" selection-start-column="7" selection-end-line="47" selection-end-column="48" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="e#298#318#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1375,15 +1360,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="990">
           <caret line="169" column="0" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
-          <folding>
-            <element signature="method#addCollection#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#removeCollection#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#markAsDeleted#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#addBook#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#hasBook#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#removeClientsDeletedBooks#0;class#UserBooks#0" expanded="false" />
-            <element signature="method#removeDeletedCollections#0;class#UserBooks#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1391,25 +1368,43 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="742" max-vertical-offset="1380">
           <caret line="294" column="32" selection-start-line="294" selection-start-column="32" selection-end-line="294" selection-end-column="32" />
-          <folding>
-            <element signature="method#userFromJSON#0;class#User#0" expanded="false" />
-            <element signature="method#toJson#0;class#User#0" expanded="false" />
-            <element signature="method#setNewPassword#0;class#User#0" expanded="false" />
-            <element signature="method#validatePassword#0;class#User#0" expanded="false" />
-            <element signature="method#markAsDeleted#0;class#User#0" expanded="false" />
-            <element signature="method#findDevice#0;class#User#0" expanded="false" />
-            <element signature="method#removeDeletedBooks#0;class#User#0" expanded="false" />
-            <element signature="e#7371#7372#0" expanded="true" />
-            <element signature="e#7410#7411#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/GetBooksResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25773194" vertical-offset="0" max-vertical-offset="582">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
           <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/userdata/BookCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/NewUserResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+          <caret line="34" column="8" selection-start-line="34" selection-start-column="8" selection-end-line="35" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/api/java/com/colibri/toread/api/LoginResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53571427" vertical-offset="405" max-vertical-offset="1485">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1469,7 +1464,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.29789722" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1477,6 +1472,7 @@
       </state>
       <state key="ProjectJDKs.UI">
         <settings>
+          <last-edited>1.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1488,11 +1484,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Gradle: commons-codec-1.5</last-edited>
+          <last-edited>Gradle: _Users_James_Developer_toread_server_build_classes_api</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.29789722" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
