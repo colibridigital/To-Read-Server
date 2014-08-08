@@ -29,8 +29,14 @@ public class LoginResource extends LoggableResource {
         //Log it
         logRequest(json.toString());
 
-        String username = json.getString("username");
-        String password = json.getString("password");
+        //Get the user specific JSON
+        JSONObject userJSON;
+        if(json.has("user"))
+            userJSON = json.getJSONObject("user");
+        else
+            return getResponseRepresentation(false, "No data for a user was supplied");
+        String username = userJSON.getString("username");
+        String password = userJSON.getString("password");
 
         if(username == null)
             return new JsonRepresentation(
@@ -72,8 +78,23 @@ public class LoginResource extends LoggableResource {
             e.printStackTrace();
         }
 
+        logger.info("New device created and details returned to user");
+
         //Return a JSONified version of the device containing the device id and auth code
         return new JsonRepresentation(deviceJSON);
+    }
+
+    private JsonRepresentation getResponseRepresentation(boolean success, String message){
+        JSONObject object = new JSONObject();
+        try {
+            object.put("operation_success", success);
+            object.put("message", message);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        logger.info("Response to client was " + " sucess: " + success + " message: " + message);
+        return new JsonRepresentation(object);
     }
 
     private JSONObject getErrorRepresentation(String message){
