@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="toread-server:jar">
+    <output-path>$PROJECT_DIR$</output-path>
+    <root id="archive" name="toread-server.jar">
+      <element id="module-output" name="toread-server" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/7999a63bfccbc7c247a9aea10d83d4272bd492c6/log4j-1.2.16.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.0/8873bd0bb5cb9ee37f1b04578eb7e26fcdd44cb0/commons-lang3-3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.lib.org.json/2.0/aa0e3bef5e0c3660a3e69529a3d8b71b4ecd291a/org.restlet.lib.org.json-2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet/2.1.4/e373c8ef862f4e253425593ac0c27fc1ca7cdfca/org.restlet-2.1.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jsslutils/jsslutils/1.0.5/ddcf2646f6ecc5692c421cbfff5bd591e6c50327/jsslutils-1.0.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.json/2.1.4/7c77c8bade734cf29efb26d283bfd132fd943c85/org.restlet.ext.json-2.1.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.morphia/morphia/0.102/b563e8a9a894e809063820c4255008a158036d0a/morphia-0.102.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Gradle: _Users_James_Developer_toread_server_build_classes_api" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.5/cf993e250ff71804754ec2734a16f23c0be99f70/commons-codec-1.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.ssl/2.1.4/f5ed33bad3fb6953bb9c3425ea5a1c72666dbb31/org.restlet.ext.ssl-2.1.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.12.6/f5df0f60aa42762a86e31e29892da07c5aaa0c71/lombok-1.12.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.11.3/8a6dd3000edcc9eb18c51ebb01a42186411ccc08/mongo-java-driver-2.11.3.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Gradle: _Users_James_Developer_toread_server_build_resources_api" />
+    </root>
+  </artifact>
+</component>
