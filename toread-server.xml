@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="toread-server" default="all">
+  
+  
+  <property file="toread-server.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.pyc/**"/>
+    <exclude name="**/.pyo/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/*.lib/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/.bundle/**"/>
+    <exclude name="**/*.rbc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.zip"/>
+    <include name="*.apk"/>
+    <include name="*.war"/>
+    <include name="*.egg"/>
+    <include name="*.ear"/>
+    <include name="*.ane"/>
+    <include name="*.swc"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.7" value="${jdk.home.1.7}/bin"/>
+  <path id="jdk.classpath.1.7">
+    <fileset dir="${jdk.home.1.7}">
+      <include name="lib/ant-javafx.jar"/>
+      <include name="lib/dt.jar"/>
+      <include name="lib/javafx-doclet.jar"/>
+      <include name="lib/javafx-mx.jar"/>
+      <include name="lib/jconsole.jar"/>
+      <include name="lib/sa-jdi.jar"/>
+      <include name="lib/tools.jar"/>
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/htmlconverter.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxrt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.7}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.7}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.7"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.gradle:_commons-codec-1.5.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.5/cf993e250ff71804754ec2734a16f23c0be99f70/commons-codec-1.5.jar"/>
+  </path>
+  
+  <path id="library.gradle:_commons-lang3-3.0.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.0/8873bd0bb5cb9ee37f1b04578eb7e26fcdd44cb0/commons-lang3-3.0.jar"/>
+  </path>
+  
+  <path id="library.gradle:_hamcrest-core-1.1.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.1/860340562250678d1a344907ac75754e259cdb14/hamcrest-core-1.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_javax.servlet-3.0.0.v201112011016.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.orbit/javax.servlet/3.0.0.v201112011016/aaaa85845fb5c59da00193f06b8e5278d8bf3f8/javax.servlet-3.0.0.v201112011016.jar"/>
+  </path>
+  
+  <path id="library.gradle:_javax.servlet-api-3.0.1.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.0.1/6bf0ebb7efd993e222fc1112377b5e92a13b38dd/javax.servlet-api-3.0.1.jar"/>
+  </path>
+  
+  <path id="library.gradle:_jetty-ajp-8.1.14.v20131031.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-ajp/8.1.14.v20131031/b56f46903320c8d80072d6399da915657b468658/jetty-ajp-8.1.14.v20131031.jar"/>
+  </path>
+  
+  <path id="library.gradle:_jetty-continuation-8.1.14.v20131031.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-continuation/8.1.14.v20131031/e3396abd21360191c2277e848eff489b58bba45d/jetty-continuation-8.1.14.v20131031.jar"/>
+  </path>
+  
+  <path id="library.gradle:_jetty-http-8.1.14.v20131031.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/8.1.14.v20131031/8dd4e01b374e16cf0335b7975a7aa0a57396d5da/jetty-http-8.1.14.v20131031.jar"/>
+  </path>
+  
+  <path id="library.gradle:_jetty-io-8.1.14.v20131031.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/8.1.14.v20131031/12f6f92d7e58349501f2cfc0716b8f1c6a2962eb/jetty-io-8.1.14.v20131031.jar"/>
+  </path>
+  
+  <path id="library.gradle:_jetty-server-8.1.14.v20131031.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/8.1.14.v20131031/7f7f9b929b9d9169dd68f36327c819ab9a03a661/jetty-server-8.1.14.v20131031.jar"/>
+  </path>
+  
+  <path id="library.gradle:_jetty-util-8.1.14.v20131031.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/8.1.14.v20131031/43063284480a41eca024dc8852452eedf6379c16/jetty-util-8.1.14.v20131031.jar"/>
+  </path>
+  
+  <path id="library.gradle:_junit-4.9.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/junit/junit/4.9/1013627e3993319870863a020034004717505815/junit-4.9.jar"/>
+  </path>
+  
+  <path id="library.gradle:_log4j-1.2.16.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/7999a63bfccbc7c247a9aea10d83d4272bd492c6/log4j-1.2.16.jar"/>
+  </path>
+  
+  <path id="library.gradle:_lombok-1.12.6.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.12.6/f5df0f60aa42762a86e31e29892da07c5aaa0c71/lombok-1.12.6.jar"/>
+  </path>
+  
+  <path id="library.gradle:_mongo-java-driver-2.11.3.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.11.3/8a6dd3000edcc9eb18c51ebb01a42186411ccc08/mongo-java-driver-2.11.3.jar"/>
+  </path>
+  
+  <path id="library.gradle:_morphia-0.102.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.google.code.morphia/morphia/0.102/b563e8a9a894e809063820c4255008a158036d0a/morphia-0.102.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.restlet-2.2.2.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet/2.2.2/5b7be0902b197f0fd20292e667b85380c93a4472/org.restlet-2.2.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.restlet.ext.jetty-2.2.2.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.jetty/2.2.2/215413a5f6b3ace3604f98f8c597470f15b8304a/org.restlet.ext.jetty-2.2.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.restlet.ext.json-2.2.2.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.json/2.2.2/cdd999d3fb690b4b7311056070dcea319b8cd1c9/org.restlet.ext.json-2.2.2.jar"/>
+  </path>
+  
+  <path id="library.gradle:_org.restlet.lib.org.restlet.lib.org.json-2.0.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.lib.org.restlet.lib.org.json/2.0/aa0e3bef5e0c3660a3e69529a3d8b71b4ecd291a/org.restlet.lib.org.restlet.lib.org.json-2.0.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm4-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module toread-server -->
+  
+  <dirname property="module.toread-server.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.toread-server" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.toread-server" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.toread-server" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.toread-server" value="-encoding UTF-8 -source 1.7 ${compiler.args}"/>
+  
+  <property name="toread-server.output.dir" value="${module.toread-server.basedir}/build/classes/main"/>
+  <property name="toread-server.testoutput.dir" value="${module.toread-server.basedir}/build/classes/test"/>
+  
+  <path id="toread-server.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="toread-server.module.production.classpath">
+    <path refid="${module.jdk.classpath.toread-server}"/>
+    <path refid="library.gradle:_commons-codec-1.5.classpath"/>
+    <path refid="library.gradle:_mongo-java-driver-2.11.3.classpath"/>
+    <path refid="library.gradle:_morphia-0.102.classpath"/>
+    <path refid="library.gradle:_log4j-1.2.16.classpath"/>
+    <path refid="library.gradle:_commons-lang3-3.0.classpath"/>
+    <path refid="library.gradle:_lombok-1.12.6.classpath"/>
+    <path refid="library.gradle:_org.restlet-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.ext.json-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.ext.jetty-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.lib.org.restlet.lib.org.json-2.0.classpath"/>
+    <path refid="library.gradle:_jetty-ajp-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-continuation-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-http-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-io-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-server-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-util-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_javax.servlet-api-3.0.1.classpath"/>
+    <path refid="library.gradle:_javax.servlet-3.0.0.v201112011016.classpath"/>
+  </path>
+  
+  <path id="toread-server.runtime.production.module.classpath">
+    <pathelement location="${toread-server.output.dir}"/>
+    <path refid="library.gradle:_commons-codec-1.5.classpath"/>
+    <path refid="library.gradle:_mongo-java-driver-2.11.3.classpath"/>
+    <path refid="library.gradle:_morphia-0.102.classpath"/>
+    <path refid="library.gradle:_log4j-1.2.16.classpath"/>
+    <path refid="library.gradle:_commons-lang3-3.0.classpath"/>
+    <path refid="library.gradle:_lombok-1.12.6.classpath"/>
+    <path refid="library.gradle:_org.restlet-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.ext.json-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.ext.jetty-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.lib.org.restlet.lib.org.json-2.0.classpath"/>
+    <path refid="library.gradle:_jetty-ajp-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-continuation-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-http-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-io-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-server-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-util-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_javax.servlet-api-3.0.1.classpath"/>
+    <path refid="library.gradle:_javax.servlet-3.0.0.v201112011016.classpath"/>
+  </path>
+  
+  <path id="toread-server.module.classpath">
+    <path refid="${module.jdk.classpath.toread-server}"/>
+    <pathelement location="${toread-server.output.dir}"/>
+    <path refid="library.gradle:_commons-codec-1.5.classpath"/>
+    <path refid="library.gradle:_mongo-java-driver-2.11.3.classpath"/>
+    <path refid="library.gradle:_morphia-0.102.classpath"/>
+    <path refid="library.gradle:_log4j-1.2.16.classpath"/>
+    <path refid="library.gradle:_commons-lang3-3.0.classpath"/>
+    <path refid="library.gradle:_lombok-1.12.6.classpath"/>
+    <path refid="library.gradle:_junit-4.9.classpath"/>
+    <path refid="library.gradle:_hamcrest-core-1.1.classpath"/>
+    <path refid="library.gradle:_org.restlet-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.ext.json-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.ext.jetty-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.lib.org.restlet.lib.org.json-2.0.classpath"/>
+    <path refid="library.gradle:_jetty-ajp-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-continuation-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-http-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-io-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-server-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-util-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_javax.servlet-api-3.0.1.classpath"/>
+    <path refid="library.gradle:_javax.servlet-3.0.0.v201112011016.classpath"/>
+  </path>
+  
+  <path id="toread-server.runtime.module.classpath">
+    <pathelement location="${toread-server.testoutput.dir}"/>
+    <pathelement location="${toread-server.output.dir}"/>
+    <path refid="library.gradle:_commons-codec-1.5.classpath"/>
+    <path refid="library.gradle:_mongo-java-driver-2.11.3.classpath"/>
+    <path refid="library.gradle:_morphia-0.102.classpath"/>
+    <path refid="library.gradle:_log4j-1.2.16.classpath"/>
+    <path refid="library.gradle:_commons-lang3-3.0.classpath"/>
+    <path refid="library.gradle:_lombok-1.12.6.classpath"/>
+    <path refid="library.gradle:_junit-4.9.classpath"/>
+    <path refid="library.gradle:_hamcrest-core-1.1.classpath"/>
+    <path refid="library.gradle:_org.restlet-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.ext.json-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.ext.jetty-2.2.2.classpath"/>
+    <path refid="library.gradle:_org.restlet.lib.org.restlet.lib.org.json-2.0.classpath"/>
+    <path refid="library.gradle:_jetty-ajp-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-continuation-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-http-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-io-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-server-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_jetty-util-8.1.14.v20131031.classpath"/>
+    <path refid="library.gradle:_javax.servlet-api-3.0.1.classpath"/>
+    <path refid="library.gradle:_javax.servlet-3.0.0.v201112011016.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.toread-server">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.toread-server">
+    <patternset refid="excluded.from.module.toread-server"/>
+  </patternset>
+  
+  <path id="toread-server.module.sourcepath">
+    <dirset dir="${module.toread-server.basedir}">
+      <include name="src/api/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.toread-server" depends="compile.module.toread-server.production,compile.module.toread-server.tests" description="Compile module toread-server"/>
+  
+  <target name="compile.module.toread-server.production" depends="register.custom.compilers" description="Compile module toread-server; production classes">
+    <mkdir dir="${toread-server.output.dir}"/>
+    <javac2 destdir="${toread-server.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.toread-server}/javac">
+      <compilerarg line="${compiler.args.toread-server}"/>
+      <bootclasspath refid="toread-server.module.bootclasspath"/>
+      <classpath refid="toread-server.module.production.classpath"/>
+      <src refid="toread-server.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.toread-server"/>
+    </javac2>
+    
+    <copy todir="${toread-server.output.dir}">
+      <fileset dir="${module.toread-server.basedir}/src/api/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.toread-server.tests" depends="register.custom.compilers,compile.module.toread-server.production" description="compile module toread-server; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.toread-server" description="cleanup module">
+    <delete dir="${toread-server.output.dir}"/>
+    <delete dir="${toread-server.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.toread-server" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.toread-server" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.toread-server:jar" value="${basedir}"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.toread-server.jar" value="${artifacts.temp.dir}/toread-server.jar"/>
+  </target>
+  
+  <target name="artifact.toread-server:jar" depends="init.artifacts, compile.module.toread-server" description="Build &#39;toread-server:jar&#39; artifact">
+    <property name="artifact.temp.output.toread-server:jar" value="${artifacts.temp.dir}/toread_server_jar"/>
+    <mkdir dir="${artifact.temp.output.toread-server:jar}"/>
+    <jar destfile="${temp.jar.path.toread-server.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${toread-server.output.dir}"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-ajp/8.1.14.v20131031/b56f46903320c8d80072d6399da915657b468658/jetty-ajp-8.1.14.v20131031.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-io/8.1.14.v20131031/12f6f92d7e58349501f2cfc0716b8f1c6a2962eb/jetty-io-8.1.14.v20131031.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/log4j/log4j/1.2.16/7999a63bfccbc7c247a9aea10d83d4272bd492c6/log4j-1.2.16.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.jetty/2.2.2/215413a5f6b3ace3604f98f8c597470f15b8304a/org.restlet.ext.jetty-2.2.2.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.lib.org.restlet.lib.org.json/2.0/aa0e3bef5e0c3660a3e69529a3d8b71b4ecd291a/org.restlet.lib.org.restlet.lib.org.json-2.0.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.orbit/javax.servlet/3.0.0.v201112011016/aaaa85845fb5c59da00193f06b8e5278d8bf3f8/javax.servlet-3.0.0.v201112011016.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-http/8.1.14.v20131031/8dd4e01b374e16cf0335b7975a7aa0a57396d5da/jetty-http-8.1.14.v20131031.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.mongodb/mongo-java-driver/2.11.3/8a6dd3000edcc9eb18c51ebb01a42186411ccc08/mongo-java-driver-2.11.3.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-util/8.1.14.v20131031/43063284480a41eca024dc8852452eedf6379c16/jetty-util-8.1.14.v20131031.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet.ext.json/2.2.2/cdd999d3fb690b4b7311056070dcea319b8cd1c9/org.restlet.ext.json-2.2.2.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.5/cf993e250ff71804754ec2734a16f23c0be99f70/commons-codec-1.5.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.0.1/6bf0ebb7efd993e222fc1112377b5e92a13b38dd/javax.servlet-api-3.0.1.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-continuation/8.1.14.v20131031/e3396abd21360191c2277e848eff489b58bba45d/jetty-continuation-8.1.14.v20131031.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.12.6/f5df0f60aa42762a86e31e29892da07c5aaa0c71/lombok-1.12.6.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/8.1.14.v20131031/7f7f9b929b9d9169dd68f36327c819ab9a03a661/jetty-server-8.1.14.v20131031.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.restlet.jse/org.restlet/2.2.2/5b7be0902b197f0fd20292e667b85380c93a4472/org.restlet-2.2.2.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.google.code.morphia/morphia/0.102/b563e8a9a894e809063820c4255008a158036d0a/morphia-0.102.jar"/>
+      <zipfileset src="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.0/8873bd0bb5cb9ee37f1b04578eb7e26fcdd44cb0/commons-lang3-3.0.jar"/>
+    </jar>
+    <copy file="${temp.jar.path.toread-server.jar}" tofile="${artifact.temp.output.toread-server:jar}/toread-server.jar"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.toread-server:jar" description="Build all artifacts">
+    <mkdir dir="${artifact.output.toread-server:jar}"/>
+    <copy todir="${artifact.output.toread-server:jar}">
+      <fileset dir="${artifact.temp.output.toread-server:jar}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>
