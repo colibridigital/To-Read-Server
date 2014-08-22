@@ -25,18 +25,26 @@
     <orderEntry type="library" scope="TEST" name="Gradle: _Users_James_Developer_toread_server_build_classes_impl" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: _Users_James_Developer_toread_server_build_resources_impl" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-codec-1.5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.restlet-2.1.4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.restlet.ext.json-2.1.4" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.restlet.ext.ssl-2.1.4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: mongo-java-driver-2.11.3" level="project" />
     <orderEntry type="library" exported="" name="Gradle: morphia-0.102" level="project" />
     <orderEntry type="library" exported="" name="Gradle: log4j-1.2.16" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-lang3-3.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: lombok-1.12.6" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.restlet.lib.org.json-2.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: jsslutils-1.0.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: junit-4.9" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: hamcrest-core-1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.restlet-2.2.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.restlet.ext.json-2.2.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.restlet.ext.jetty-2.2.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.restlet.lib.org.restlet.lib.org.json-2.0" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jetty-ajp-8.1.14.v20131031" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jetty-continuation-8.1.14.v20131031" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jetty-http-8.1.14.v20131031" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jetty-io-8.1.14.v20131031" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jetty-server-8.1.14.v20131031" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: jetty-util-8.1.14.v20131031" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.servlet-api-3.0.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: javax.servlet-3.0.0.v201112011016" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: unresolved_dependency___org_restlet_jse_org_restlet_ext_ssl_2_2_2" level="project" />
   </component>
 </module>
 
