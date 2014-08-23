@@ -25,6 +25,9 @@
         <module name="toread-server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="toread-server" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
