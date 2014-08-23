@@ -42,6 +42,11 @@ public class Bootstrap {
 //						dao.save(book, WriteConcern.ACKNOWLEDGED);
 //						System.out.println(("done"));
 
+            component.getContext().getParameters().add("maxThreads", "1024");
+            component.getContext().getParameters().add("minThreads", "128");
+            component.getContext().getParameters().add("lowThreads", "900");
+            component.getContext().getParameters().add("maxQueued", "-1");
+
 			component.getDefaultHost().attach("/web", new WebApplication());
 			component.getDefaultHost().attach("/api", new ToReadApplication());
 			component.getDefaultHost().attach("/loaderio-83bd0a466cb318e0b32148de82750aa7", new LoadIOApplication());
