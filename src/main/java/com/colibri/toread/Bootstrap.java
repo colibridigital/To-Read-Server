@@ -46,6 +46,7 @@ public class Bootstrap {
             component.getContext().getParameters().add("minThreads", "128");
             component.getContext().getParameters().add("lowThreads", "900");
             component.getContext().getParameters().add("maxQueued", "-1");
+            component.getContext().getParameters().add("acceptQueueSize", "10000");
 
 			component.getDefaultHost().attach("/web", new WebApplication());
 			component.getDefaultHost().attach("/api", new ToReadApplication());
