@@ -1,8 +1,7 @@
 package com.colibri.toread;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Properties;
 
 public class ReadProperties {
@@ -11,13 +10,12 @@ public class ReadProperties {
 	//Load static properties from the properties file
 	private static void load() {
 		try {
-			File propsFile = new File("ToRead.properties");
-			FileInputStream fileInput = new FileInputStream(propsFile);
-			
+            InputStream inputStream =ReadProperties.class.getResourceAsStream("/ToRead.properties");
+
 			trProps = new Properties();
-			trProps.load(fileInput);
+			trProps.load(inputStream);
 			
-			fileInput.close();
+			inputStream.close();
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
