@@ -1,6 +1,7 @@
 package com.colibri.toread;
 
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.restlet.Component;
 import org.restlet.Server;
 import org.restlet.data.Parameter;

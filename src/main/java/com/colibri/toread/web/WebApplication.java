@@ -1,5 +1,7 @@
 package com.colibri.toread.web;
 
+import com.colibri.toread.api.AdMobConfigResource;
+import com.colibri.toread.api.IAdConfigResource;
 import org.restlet.Application;
 import org.restlet.Restlet;
 import org.restlet.resource.Directory;
@@ -33,7 +35,10 @@ public class WebApplication extends Application {
 		router.attach("/css", new Directory(getContext(), cssPath));
 		router.attach("", WebResource.class);
 		router.attach("/manage", WebLoginResource.class);
-		
+
+        router.attach("/config/iad", IAdConfigResource.class);
+        router.attach("/config/admob", AdMobConfigResource.class);
+
 		return router;
 	}
 

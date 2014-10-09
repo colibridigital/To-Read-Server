@@ -26,7 +26,7 @@ public class ToReadApplication extends Application {
 		router.attach("/sync/clientlist", ClientListResource.class);
         router.attach("/sync/getall", GetBooksResource.class);
 		router.attach("/suggest/bestsell", BookSuggestionsResource.class);
-				
+
 		return router;
 	}
 
