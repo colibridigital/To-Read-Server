@@ -7,6 +7,6 @@ public class IAdConfigResource extends AuthenticatableResource {
 	
 	@Get
 	public String represent() {
-		return "9";
+		return "5";
 	}
 }

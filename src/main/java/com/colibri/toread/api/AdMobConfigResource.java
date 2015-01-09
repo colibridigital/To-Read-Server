@@ -18,6 +18,6 @@ public class AdMobConfigResource extends AuthenticatableResource {
 	
 	@Get
 	public String represent() {
-		return "5";
+		return "3";
 	}
 }
